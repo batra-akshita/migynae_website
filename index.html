@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiGynae - Your Pregnancy Support Companion</title>
+    <title>MiGynae - Professional Pregnancy Care Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #F4A4A3;
+            --primary-dark: #e88a89;
+            --secondary-color: #2c3e50;
+            --accent-color: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,11 +25,10 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
-            min-height: 100vh;
+            color: var(--text-dark);
+            overflow-x: hidden;
         }
 
         .container {
@@ -25,338 +37,747 @@
             padding: 0 20px;
         }
 
+        /* Header */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(244, 164, 163, 0.1);
-            position: sticky;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            width: 100%;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(244, 164, 163, 0.1);
+            transition: all 0.3s ease;
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 0;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: #F4A4A3;
-            border-radius: 50%;
+        .logo-mark {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-size: 20px;
+            font-weight: 600;
+            box-shadow: var(--shadow);
         }
 
         .logo h1 {
-            font-size: 24px;
-            color: #F4A4A3;
-            font-weight: 600;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #666;
+            color: var(--text-dark);
             font-weight: 500;
+            font-size: 15px;
             transition: color 0.3s ease;
+            position: relative;
         }
 
         .nav-links a:hover {
-            color: #F4A4A3;
+            color: var(--primary-color);
         }
 
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .cta-nav {
+            background: var(--primary-color);
+            color: white !important;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-nav:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .cta-nav::after {
+            display: none;
+        }
+
+        /* Hero Section */
         .hero {
-            padding: 6rem 0;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(244, 164, 163, 0.1) 0%, rgba(252, 231, 243, 0.2) 100%);
+            background: linear-gradient(135deg, #fafafa 0%, #f8f9fa 100%);
+            padding: 140px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -10%;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(244, 164, 163, 0.03), rgba(244, 164, 163, 0.08));
+            transform: skewX(-15deg);
+            border-radius: 0 0 50% 0;
         }
 
         .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
 
-        .hero h1 {
+        .hero-text h1 {
             font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #F4A4A3, #ec7e7d);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-text .highlight {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 700;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #666;
-            line-height: 1.8;
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 32px;
+            line-height: 1.7;
         }
 
-        .hero-icon {
-            width: 120px;
-            height: 120px;
-            margin: 2rem auto;
-            background: #F4A4A3;
-            border-radius: 50%;
+        .beta-notice {
+            margin-bottom: 40px;
+        }
+
+        .beta-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #e8f5e8, #d4edda);
+            color: #155724;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid #c3e6cb;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-cta {
             display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dark);
+            padding: 16px 32px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-mockup {
+            width: 280px;
+            height: 560px;
+            background: #333;
+            border-radius: 30px;
+            padding: 10px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
             position: relative;
-            box-shadow: 0 20px 40px rgba(244, 164, 163, 0.3);
+            overflow: hidden;
         }
 
-        .hero-icon::before {
-            content: '👶';
-            font-size: 60px;
+        .phone-screen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.1;
         }
 
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: var(--shadow-hover);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .card-1 {
+            top: 10%;
+            right: -20%;
+            width: 200px;
+            animation-delay: 0s;
+        }
+
+        .card-2 {
+            bottom: 15%;
+            left: -25%;
+            width: 180px;
+            animation-delay: -3s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        /* Features Section */
         .features {
-            padding: 6rem 0;
+            padding: 120px 0;
             background: white;
         }
 
-        .features h2 {
+        .section-header {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
         }
 
         .feature-card {
-            background: linear-gradient(135deg, #fff 0%, #fdf2f8 100%);
-            padding: 2.5rem;
+            background: white;
+            border: 1px solid #f1f3f4;
             border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(244, 164, 163, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(244, 164, 163, 0.1);
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(244, 164, 163, 0.2);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(244, 164, 163, 0.2);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
         }
 
         .feature-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-            background: #F4A4A3;
-            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
             color: white;
+            font-size: 28px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 25px rgba(244, 164, 163, 0.3);
         }
 
         .feature-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #333;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-dark);
         }
 
         .feature-card p {
-            color: #666;
-            line-height: 1.6;
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 16px;
         }
 
-        .cta-section {
-            background: linear-gradient(135deg, #F4A4A3 0%, #ec7e7d 100%);
-            color: white;
-            padding: 6rem 0;
+        /* Trust Section */
+        .trust-section {
+            background: var(--accent-color);
+            padding: 100px 0;
+        }
+
+        .trust-content {
             text-align: center;
         }
 
-        .cta-section h2 {
+        .trust-content h2 {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-dark);
         }
 
-        .cta-section p {
+        .trust-content p {
             font-size: 1.2rem;
-            margin-bottom: 3rem;
+            color: var(--text-light);
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .trust-badge {
+            text-align: center;
+        }
+
+        .trust-badge-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            box-shadow: var(--shadow);
+            color: var(--primary-color);
+            font-size: 32px;
+        }
+
+        .trust-badge h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .trust-badge p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #34495e 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="rgba(244,164,163,0.1)" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></svg>') repeat;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .cta-content p {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
             opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .email-signup {
             max-width: 500px;
             margin: 0 auto;
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
+            gap: 16px;
+            background: white;
+            padding: 8px;
+            border-radius: 60px;
+            box-shadow: var(--shadow-hover);
         }
 
         .email-input {
             flex: 1;
-            min-width: 250px;
-            padding: 1rem 1.5rem;
+            padding: 20px 24px;
             border: none;
-            border-radius: 50px;
-            font-size: 1rem;
+            background: transparent;
+            font-size: 16px;
             outline: none;
+            color: var(--text-dark);
         }
 
-        .cta-button {
-            background: white;
-            color: #F4A4A3;
-            padding: 1rem 2rem;
+        .email-input::placeholder {
+            color: #999;
+        }
+
+        .email-submit {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px 32px;
             border: none;
             border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            min-width: 150px;
+            white-space: nowrap;
         }
 
-        .cta-button:hover {
-            background: #f8f8f8;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+        .email-submit:hover {
+            background: var(--primary-dark);
+            transform: scale(1.05);
         }
 
-        .app-preview {
-            padding: 6rem 0;
-            text-align: center;
-        }
-
-        .app-preview h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #333;
-        }
-
-        .app-preview p {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .download-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #333;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .download-btn:hover {
-            background: #F4A4A3;
-            transform: translateY(-3px);
-        }
-
+        /* Footer */
         footer {
-            background: #333;
+            background: #1a1a1a;
             color: white;
-            padding: 4rem 0 2rem;
-            text-align: center;
+            padding: 80px 0 40px;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
         }
 
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: #F4A4A3;
+        .footer-brand h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--primary-color);
         }
 
-        .footer-section p, .footer-section a {
+        .footer-brand p {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-section a {
             color: #ccc;
             text-decoration: none;
-            line-height: 1.8;
+            display: block;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
         }
 
         .footer-section a:hover {
-            color: #F4A4A3;
+            color: var(--primary-color);
         }
 
         .footer-bottom {
-            border-top: 1px solid #555;
-            padding-top: 2rem;
+            border-top: 1px solid #333;
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             color: #999;
         }
 
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
         /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .floating-card {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
 
-            .hero h1 {
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero {
+                padding: 120px 0 80px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .hero-text h1 {
                 font-size: 2.5rem;
             }
 
-            .hero p {
-                font-size: 1rem;
+            .hero-stats {
+                justify-content: center;
+                gap: 30px;
+            }
+
+            .hero-cta {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .phone-mockup {
+                width: 240px;
+                height: 480px;
             }
 
             .email-signup {
                 flex-direction: column;
-                align-items: center;
+                padding: 20px;
+                border-radius: 20px;
+                gap: 0;
             }
 
             .email-input {
-                width: 100%;
-                max-width: 350px;
+                text-align: center;
             }
 
-            .download-buttons {
-                flex-direction: column;
-                align-items: center;
+            .email-submit {
+                border-radius: 12px;
+                margin-top: 8px;
             }
 
             .features-grid {
                 grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .trust-badges {
+                gap: 40px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
             }
         }
 
-        /* Animations */
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Loading animation */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -368,13 +789,8 @@
             }
         }
 
-        .hero-content {
-            animation: fadeInUp 0.8s ease;
-        }
-
-        .feature-card {
-            animation: fadeInUp 0.8s ease;
-            animation-delay: calc(var(--delay) * 0.1s);
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
         }
     </style>
 </head>
@@ -382,154 +798,169 @@
     <header>
         <nav class="container">
             <div class="logo">
-                <div class="logo-icon">♡</div>
+                <div class="logo-mark">M</div>
                 <h1>MiGynae</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
-                <li><a href="#download">Download</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Support</a></li>
+                <li><a href="#download" class="cta-nav">Get App</a></li>
             </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="hero">
+        <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Your Pregnancy Journey, Supported</h1>
-                    <p>Get expert guidance, track your milestones, and find comfort in reliable information throughout your pregnancy with MiGynae.</p>
-                    <div class="hero-icon"></div>
-                    <p>Explore common pregnancy concerns, track kicks and contractions, discover safe home remedies, and get personalized nutrition and exercise guidance.</p>
+                    <div class="hero-text">
+                        <h1>Professional <span class="highlight">Pregnancy Care</span> in Your Pocket</h1>
+                        <p>Evidence-based guidance, expert insights, and comprehensive tracking tools trusted by healthcare professionals and expecting mothers worldwide.</p>
+                        
+                        <div class="beta-notice">
+                            <div class="beta-badge">
+                                <i class="fas fa-flask"></i>
+                                <span>Now in Beta - Free for all users</span>
+                            </div>
+                        </div>
+
+                        <div class="hero-cta">
+                            <a href="#download" class="btn-primary">
+                                <i class="fas fa-download"></i>
+                                Download App
+                            </a>
+                            <a href="#features" class="btn-secondary">
+                                <i class="fas fa-play"></i>
+                                See Features
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-visual">
+                        <div class="phone-mockup">
+                            <div class="phone-screen">
+                                <i class="fas fa-heart" style="font-size: 48px; margin-bottom: 16px;"></i>
+                                <div style="font-size: 24px; margin-bottom: 8px;">MiGynae</div>
+                                <div style="font-size: 14px; opacity: 0.8;">Professional Pregnancy Care</div>
+                            </div>
+                        </div>
+                        
+                        <div class="floating-elements">
+                            <div class="floating-card card-1">
+                                <div style="display: flex; align-items: center; gap: 12px;">
+                                    <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-heartbeat" style="color: white;"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 14px;">Kick Counter</div>
+                                        <div style="color: #666; font-size: 12px;">24 movements today</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="floating-card card-2">
+                                <div style="display: flex; align-items: center; gap: 12px;">
+                                    <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-user-md" style="color: white;"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight: 600; font-size: 14px;">Expert Advice</div>
+                                        <div style="color: #666; font-size: 12px;">Professional guidance</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="features" class="features">
             <div class="container">
-                <h2>Everything You Need in One App</h2>
+                <div class="section-header">
+                    <h2>Comprehensive Pregnancy Support</h2>
+                    <p>Everything you need for a healthy, informed pregnancy journey backed by medical expertise and the latest research.</p>
+                </div>
+                
                 <div class="features-grid">
-                    <div class="feature-card" style="--delay: 1">
-                        <div class="feature-icon">💭</div>
-                        <h3>Expert Q&A</h3>
-                        <p>Get answers to common pregnancy questions with reliable, evidence-based information from healthcare professionals.</p>
-                    </div>
-                    <div class="feature-card" style="--delay: 2">
-                        <div class="feature-icon">🏠</div>
-                        <h3>Safe Home Remedies</h3>
-                        <p>Discover natural, pregnancy-safe remedies for common discomforts like morning sickness, headaches, and sleep issues.</p>
-                    </div>
-                    <div class="feature-card" style="--delay: 3">
-                        <div class="feature-icon">👶</div>
-                        <h3>Kick Counter</h3>
-                        <p>Monitor your baby's movements with our easy-to-use kick tracking feature for peace of mind.</p>
-                    </div>
-                    <div class="feature-card" style="--delay: 4">
-                        <div class="feature-icon">⏱️</div>
-                        <h3>Contraction Timer</h3>
-                        <p>Track contraction frequency and duration to know when it's time to head to the hospital.</p>
-                    </div>
-                    <div class="feature-card" style="--delay: 5">
-                        <div class="feature-icon">🥗</div>
-                        <h3>Nutrition Guidance</h3>
-                        <p>Get personalized dietary recommendations and meal plans tailored to each stage of your pregnancy.</p>
-                    </div>
-                    <div class="feature-card" style="--delay: 6">
-                        <div class="feature-icon">🧘</div>
-                        <h3>Safe Exercises</h3>
-                        <p>Access pregnancy-safe workout routines and stretches designed for each trimester.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="container">
-                <h2>Stay Updated</h2>
-                <p>Be the first to know when MiGynae launches and receive pregnancy tips directly in your inbox.</p>
-                <form class="email-signup" id="emailForm">
-                    <input type="email" class="email-input" placeholder="Enter your email address" required>
-                    <button type="submit" class="cta-button">Notify Me</button>
-                </form>
-            </div>
-        </section>
-
-        <section id="download" class="app-preview">
-            <div class="container">
-                <h2>Download MiGynae Today</h2>
-                <p>Join thousands of expecting mothers who trust MiGynae for reliable pregnancy support and guidance.</p>
-                <div class="download-buttons">
-                    <a href="#" class="download-btn">
-                        <span>📱</span>
-                        <div>
-                            <div style="font-size: 12px;">Download on the</div>
-                            <div>App Store</div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-stethoscope"></i>
                         </div>
-                    </a>
-                    <a href="#" class="download-btn">
-                        <span>🤖</span>
-                        <div>
-                            <div style="font-size: 12px;">Get it on</div>
-                            <div>Google Play</div>
+                        <h3>Medical-Grade Q&A</h3>
+                        <p>Access to evidence-based answers for pregnancy concerns, reviewed by certified healthcare professionals and updated with latest medical guidelines.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
                         </div>
-                    </a>
+                        <h3>Safe Natural Remedies</h3>
+                        <p>Clinically-researched natural solutions for common pregnancy symptoms, with safety profiles verified by maternal health specialists.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3>Advanced Fetal Monitoring</h3>
+                        <p>Professional-grade kick counting and pattern analysis with intelligent alerts and comprehensive movement tracking history.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Precision Contraction Timer</h3>
+                        <p>Hospital-quality contraction monitoring with pattern recognition, timing analysis, and automated birth preparation alerts.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <h3>Personalized Nutrition Plans</h3>
+                        <p>Customized meal planning based on trimester, dietary restrictions, and nutritional needs with registered dietitian oversight.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Safe Exercise Programs</h3>
+                        <p>Trimester-specific workout routines designed by certified prenatal fitness specialists with safety monitoring protocols.</p>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
 
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>MiGynae</h3>
-                    <p>Supporting expecting mothers with reliable information, helpful tools, and peace of mind throughout their pregnancy journey.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact Us</h3>
-                    <p>Email: support@migynae.com</p>
-                    <p>For medical emergencies, always consult your healthcare provider immediately.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Important Notice</h3>
-                    <p>This app is for informational purposes only and should not replace professional medical advice. Always consult with your healthcare provider for medical concerns.</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 MiGynae. All rights reserved.</p>
-                <p>Disclaimer: This app provides general information only and should not substitute professional medical advice.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Email form handling (you can integrate with your preferred email service later)
-        document.getElementById('emailForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            
-            // For now, just show an alert. You can integrate with services like:
-            // - Mailchimp API
-            // - ConvertKit
-            // - Your own backend
-            alert('Thank you for your interest! We\'ll notify you when MiGynae launches.');
-            this.reset();
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+        <section class="trust-section">
+            <div class="container">
+                <div class="trust-content">
+                    <h2>Trusted by Healthcare Professionals</h2>
+                    <p>MiGynae is developed in collaboration with leading obstetricians, midwives, and maternal health experts to ensure the highest standards of care.</p>
+                    
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <div class="trust-badge-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h4>Medically Reviewed</h4>
+                            <p>All content verified by certified specialists</p>
+                        </div>
+                        
+                        <div class="trust-badge">
+                            <div class="trust-badge-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Community Driven</h4>
+                            <p>Built with feedback from expecting mothers</p>
+                        </div>
+                        
+                        <div

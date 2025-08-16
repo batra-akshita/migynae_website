@@ -244,12 +244,15 @@
             cursor: pointer;
             transition: all 0.3s ease;
             padding: 0;
+            display: inline-block;
         }
 
         .btn-android img, .btn-ios img {
             height: 60px;
             width: auto;
             transition: all 0.3s ease;
+            max-width: 200px;
+            object-fit: contain;
         }
 
         .btn-android:hover, .btn-ios:hover {
@@ -799,6 +802,12 @@
             .hero-cta {
                 justify-content: center;
                 flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .btn-android img, .btn-ios img {
+                height: 50px;
+                max-width: 180px;
             }
 
             .phone-mockup {

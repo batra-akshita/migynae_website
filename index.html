@@ -238,26 +238,107 @@
             box-shadow: var(--shadow-hover);
         }
 
-        .btn-secondary {
+        .btn-android, .btn-ios {
             background: transparent;
-            color: var(--text-dark);
-            padding: 16px 32px;
-            border: 2px solid #e9ecef;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
+            border: none;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            padding: 0;
         }
 
-        .btn-secondary:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
+        .btn-android img, .btn-ios img {
+            height: 60px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        .btn-android:hover, .btn-ios:hover {
             transform: translateY(-2px);
+        }
+
+        .btn-android:hover img, .btn-ios:hover img {
+            filter: brightness(0.95);
+        }
+
+        .store-icon {
+            font-size: 28px;
+            width: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .store-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+
+        .store-text-small {
+            font-size: 11px;
+            font-weight: 400;
+            opacity: 0.8;
+            margin-bottom: 2px;
+        }
+
+        .store-text-large {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* iOS Coming Soon Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: var(--shadow-hover);
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: var(--primary-color);
+        }
+
+        .modal h2 {
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .modal p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
 
         .hero-visual {
@@ -715,11 +796,6 @@
                 font-size: 2.5rem;
             }
 
-            .hero-stats {
-                justify-content: center;
-                gap: 30px;
-            }
-
             .hero-cta {
                 justify-content: center;
                 flex-wrap: wrap;
@@ -794,6 +870,23 @@
         }
     </style>
 </head>
+<script>
+function openModal() {
+    document.getElementById('iosModal').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('iosModal').style.display = 'none';
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    var modal = document.getElementById('iosModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+</script>
 <body>
     <header>
         <nav class="container">
@@ -831,14 +924,12 @@
                         </div>
 
                         <div class="hero-cta">
-                            <a href="#download" class="btn-primary">
-                                <i class="fas fa-download"></i>
-                                Download App
+                            <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="btn-android" target="_blank">
+                                <img src="/images/Playstore_button.png" alt="Get it on Google Play">
                             </a>
-                            <a href="#features" class="btn-secondary">
-                                <i class="fas fa-play"></i>
-                                See Features
-                            </a>
+                            <button class="btn-ios" onclick="openModal()">
+                                <img src="/images/apple_logo_button_white.svg" alt="Download on the App Store">
+                            </button>
                         </div>
                     </div>
                     
@@ -877,6 +968,19 @@
             </div>
         </section>
 
+        <!-- iOS Coming Soon Modal -->
+        <div id="iosModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2><i class="fab fa-apple" style="color: var(--primary-color);"></i> Coming Soon!</h2>
+                <p>The iOS version of MiGynae is currently in development. Thank you for your interest! We'll notify you as soon as it becomes available on the App Store.</p>
+                <div class="email-signup" style="margin-top: 20px;">
+                    <input type="email" class="email-input" placeholder="Enter your email for updates">
+                    <button class="email-submit">Notify Me</button>
+                </div>
+            </div>
+        </div>
+
         <section id="features" class="features">
             <div class="container">
                 <div class="section-header">
@@ -902,61 +1006,4 @@
                     </div>
                     
                     <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                        <h3>Advanced Fetal Monitoring</h3>
-                        <p>Professional-grade kick counting and pattern analysis with intelligent alerts and comprehensive movement tracking history.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h3>Precision Contraction Timer</h3>
-                        <p>Hospital-quality contraction monitoring with pattern recognition, timing analysis, and automated birth preparation alerts.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-apple-alt"></i>
-                        </div>
-                        <h3>Personalized Nutrition Plans</h3>
-                        <p>Customized meal planning based on trimester, dietary restrictions, and nutritional needs with registered dietitian oversight.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-dumbbell"></i>
-                        </div>
-                        <h3>Safe Exercise Programs</h3>
-                        <p>Trimester-specific workout routines designed by certified prenatal fitness specialists with safety monitoring protocols.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="trust-section">
-            <div class="container">
-                <div class="trust-content">
-                    <h2>Trusted by Healthcare Professionals</h2>
-                    <p>MiGynae is developed in collaboration with leading obstetricians, midwives, and maternal health experts to ensure the highest standards of care.</p>
-                    
-                    <div class="trust-badges">
-                        <div class="trust-badge">
-                            <div class="trust-badge-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <h4>Medically Reviewed</h4>
-                            <p>All content verified by certified specialists</p>
-                        </div>
-                        
-                        <div class="trust-badge">
-                            <div class="trust-badge-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <h4>Community Driven</h4>
-                            <p>Built with feedback from expecting mothers</p>
-                        </div>
-                        
                         <div

@@ -245,6 +245,7 @@
             transition: all 0.3s ease;
             padding: 0;
             display: inline-block;
+            text-decoration: none;
         }
 
         .btn-android img, .btn-ios img {
@@ -288,60 +289,6 @@
         .store-text-large {
             font-size: 16px;
             font-weight: 600;
-        }
-
-        /* iOS Coming Soon Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 10000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background-color: white;
-            margin: 15% auto;
-            padding: 40px;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-            box-shadow: var(--shadow-hover);
-            position: relative;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            cursor: pointer;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: var(--primary-color);
-        }
-
-        .modal h2 {
-            color: var(--text-dark);
-            margin-bottom: 20px;
-            font-size: 2rem;
-        }
-
-        .modal p {
-            color: var(--text-light);
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
         }
 
         .hero-visual {
@@ -879,23 +826,6 @@
         }
     </style>
 </head>
-<script>
-function openModal() {
-    document.getElementById('iosModal').style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('iosModal').style.display = 'none';
-}
-
-// Close modal when clicking outside of it
-window.onclick = function(event) {
-    var modal = document.getElementById('iosModal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-}
-</script>
 <body>
     <header>
         <nav class="container">
@@ -933,9 +863,9 @@ window.onclick = function(event) {
                             <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="btn-android" target="_blank">
                                 <img src="/images/Playstore_button.png" alt="Get it on Google Play">
                             </a>
-                            <button class="btn-ios" onclick="openModal()">
+                            <a href="https://apps.apple.com/us/app/migynae/id6748379521" class="btn-ios" target="_blank">
                                 <img src="/images/apple_logo_button_white.svg" alt="Download on the App Store">
-                            </button>
+                            </a>
                         </div>
                     </div>
                     
@@ -973,19 +903,6 @@ window.onclick = function(event) {
                 </div>
             </div>
         </section>
-
-        <!-- iOS Coming Soon Modal -->
-        <div id="iosModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2><i class="fab fa-apple" style="color: var(--primary-color);"></i> Coming Soon!</h2>
-                <p>The iOS version of MiGynae is currently in development. Thank you for your interest! We'll notify you as soon as it becomes available on the App Store.</p>
-                <div class="email-signup" style="margin-top: 20px;">
-                    <input type="email" class="email-input" placeholder="Enter your email for updates">
-                    <button class="email-submit">Notify Me</button>
-                </div>
-            </div>
-        </div>
 
         <section id="features" class="features">
             <div class="container">
@@ -1055,79 +972,4 @@ window.onclick = function(event) {
                         
                         <div class="trust-badge">
                             <div class="trust-badge-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <h4>Community Driven</h4>
-                            <p>Built with feedback from expecting mothers</p>
-                        </div>
-                        
-                        <div class="trust-badge">
-                            <div class="trust-badge-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h4>Privacy Focused</h4>
-                            <p>Your data is secure and never shared</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Ready to Start Your Journey?</h2>
-                    <p>Join thousands of expecting mothers who trust MiGynae for their pregnancy care needs.</p>
-                    
-                    <div class="email-signup">
-                        <input type="email" class="email-input" placeholder="Enter your email for updates">
-                        <button class="email-submit">Get Notified</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>MiGynae</h3>
-                    <p>Professional pregnancy care in your pocket. Evidence-based guidance, expert insights, and comprehensive tracking tools.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Product</h4>
-                    <a href="#features">Features</a>
-                    <a href="#download">Download</a>
-                    <a href="#beta">Beta Program</a>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <a href="#about">About Us</a>
-                    <a href="#careers">Careers</a>
-                    <a href="#press">Press</a>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Support</h4>
-                    <a href="#help">Help Center</a>
-                    <a href="#contact">Contact</a>
-                    <a href="#privacy">Privacy Policy</a>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 MiGynae. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+                                

@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "JSFGK83266.com.mimedic.migynae.app",
+        "paths": [ "/share/*" ]
+      }
+    ]
+  }
+}

@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MiGynae</title>
+  <title>MiGynae - Open in App</title>
+  <meta name="apple-itunes-app" content="app-id=6748379521">
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -15,25 +16,90 @@
     .card {
       max-width: 520px;
       margin: 10vh auto;
-      padding: 24px;
+      padding: 32px;
       background: #fff;
       border: 1px solid #eee;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      text-align: center;
     }
-    .btn {
-      display: inline-block;
-      margin: 8px 8px 0 0;
-      padding: 10px 14px;
-      border-radius: 8px;
+    .logo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #f4a4a3, #ff8a87);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+    }
+    h1 {
+      font-size: 24px;
+      margin: 0 0 8px;
+      color: #1f2937;
+    }
+    p {
+      color: #6b7280;
+      line-height: 1.6;
+      margin: 8px 0;
+    }
+    .btn-primary {
+      display: block;
+      width: 100%;
+      margin: 20px 0 12px;
+      padding: 16px;
+      border-radius: 12px;
       text-decoration: none;
-      border: 1px solid #ccc;
+      border: none;
       background: #f4a4a3;
       color: #fff;
       font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
     }
-    .btn:hover {
-      opacity: 0.9;
+    .btn-primary:hover {
+      background: #ff8a87;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(244, 164, 163, 0.3);
+    }
+    .btn-secondary {
+      display: block;
+      width: 100%;
+      margin: 8px 0;
+      padding: 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 2px solid #f4a4a3;
+      background: #fff;
+      color: #f4a4a3;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover {
+      background: #fff5f5;
+    }
+    .store-buttons {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid #eee;
+    }
+    .help-text {
+      margin-top: 24px;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+    .share-code {
+      display: inline-block;
+      margin: 12px 0;
+      padding: 8px 16px;
+      background: #f3f4f6;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 13px;
+      color: #6b7280;
     }
   </style>
 </head>
@@ -45,24 +111,111 @@
       var path = location.pathname || "/";
       var el = document.getElementById("app");
 
+      // Detect platform
+      var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+      var isAndroid = /Android/i.test(navigator.userAgent);
+      var isMobile = isIOS || isAndroid;
+
       // If this is a shared link path
       if (path.startsWith("/share/")) {
         var id = path.split("/").pop();
-        el.innerHTML = `
+        var deepLink = "https://mimedic.org/share/" + id;
+
+        // Build the page content
+        var html = `
+          <div class="logo">💝</div>
           <h1>Open in MiGynae</h1>
-          <p>This link is meant to open in the MiGynae app.</p>
-          <p><strong>Share code:</strong> ${id}</p>
-          <p>
-            <a class="btn" href="https://apps.apple.com/app/6748379521">Get on iOS</a>
-            <a class="btn" href="https://play.google.com/store/apps/details?id=com.mimedic.migynae.app">Get on Android</a>
-          </p>
-          <p>If you already have the app installed, tap the link again and it should open directly.</p>
+          <p>View this content in the MiGynae app for the best experience</p>
+          <div class="share-code">Share code: ${id}</div>
         `;
+
+        // On mobile, show "Open in App" button
+        if (isMobile) {
+          html += `
+            <button class="btn-primary" onclick="openInApp()">
+              📱 Open in App
+            </button>
+          `;
+        }
+
+        // Show appropriate store button
+        html += '<div class="store-buttons">';
+        if (isIOS) {
+          html += `
+            <a class="btn-secondary" href="https://apps.apple.com/app/6748379521" target="_blank">
+              Download on App Store
+            </a>
+          `;
+        } else if (isAndroid) {
+          html += `
+            <a class="btn-secondary" href="https://play.google.com/store/apps/details?id=com.mimedic.migynae.app" target="_blank">
+              Get it on Google Play
+            </a>
+          `;
+        } else {
+          // Desktop - show both
+          html += `
+            <a class="btn-secondary" href="https://apps.apple.com/app/6748379521" target="_blank">
+              📱 Download on App Store
+            </a>
+            <a class="btn-secondary" href="https://play.google.com/store/apps/details?id=com.mimedic.migynae.app" target="_blank">
+              🤖 Get it on Google Play
+            </a>
+          `;
+        }
+        html += '</div>';
+
+        html += `
+          <p class="help-text">
+            ${isMobile ? 'Tap "Open in App" to view this content. ' : ''}
+            If you don't have the app yet, download it first.
+          </p>
+        `;
+
+        el.innerHTML = html;
+
+        // Auto-attempt to open app on mobile (with fallback)
+        if (isMobile) {
+          window.openInApp = function() {
+            // Try to open the app
+            window.location.href = deepLink;
+
+            // If app doesn't open in 2 seconds, redirect to store
+            setTimeout(function() {
+              if (document.hidden || document.webkitHidden) {
+                // App likely opened, do nothing
+                return;
+              }
+              // App didn't open, show message
+              alert("App not installed or couldn't open. Redirecting to store...");
+              if (isIOS) {
+                window.location.href = "https://apps.apple.com/app/6748379521";
+              } else if (isAndroid) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.mimedic.migynae.app";
+              }
+            }, 2000);
+          };
+
+          // Auto-try once on page load (for users clicking from messages/email)
+          setTimeout(function() {
+            var iframe = document.createElement("iframe");
+            iframe.style.display = "none";
+            iframe.src = deepLink;
+            document.body.appendChild(iframe);
+            setTimeout(function() {
+              document.body.removeChild(iframe);
+            }, 1000);
+          }, 500);
+        }
       } else {
         // Default 404 for other unknown paths
         el.innerHTML = `
+          <div class="logo">💝</div>
           <h1>404 – Page not found</h1>
-          <p>The page you’re looking for doesn’t exist.</p>
+          <p>The page you're looking for doesn't exist.</p>
+          <a class="btn-secondary" href="https://mimedic.org" style="margin-top: 20px;">
+            Go to Homepage
+          </a>
         `;
       }
     })();

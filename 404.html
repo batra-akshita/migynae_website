@@ -91,16 +91,6 @@
       font-size: 13px;
       color: #9ca3af;
     }
-    .share-code {
-      display: inline-block;
-      margin: 12px 0;
-      padding: 8px 16px;
-      background: #f3f4f6;
-      border-radius: 8px;
-      font-family: monospace;
-      font-size: 13px;
-      color: #6b7280;
-    }
   </style>
 </head>
 <body>
@@ -126,30 +116,31 @@
           <div class="logo">💝</div>
           <h1>Open in MiGynae</h1>
           <p>View this content in the MiGynae app for the best experience</p>
-          <div class="share-code">Share code: ${id}</div>
         `;
 
-        // On mobile, show "Open in App" button
+        // On mobile, show "Open in App" button as a direct link
         if (isMobile) {
           html += `
-            <button class="btn-primary" onclick="openInApp()">
+            <a class="btn-primary" href="${deepLink}">
               📱 Open in App
-            </button>
+            </a>
           `;
         }
 
         // Show appropriate store button
         html += '<div class="store-buttons">';
+        html += '<p style="font-size: 14px; color: #9ca3af; margin-bottom: 12px;">Don\'t have the app?</p>';
+
         if (isIOS) {
           html += `
             <a class="btn-secondary" href="https://apps.apple.com/app/6748379521" target="_blank">
-              Download on App Store
+              📱 Download on App Store
             </a>
           `;
         } else if (isAndroid) {
           html += `
             <a class="btn-secondary" href="https://play.google.com/store/apps/details?id=com.mimedic.migynae.app" target="_blank">
-              Get it on Google Play
+              🤖 Get it on Google Play
             </a>
           `;
         } else {
@@ -167,46 +158,12 @@
 
         html += `
           <p class="help-text">
-            ${isMobile ? 'Tap "Open in App" to view this content. ' : ''}
-            If you don't have the app yet, download it first.
+            Get pregnancy tips, track your baby's growth, and connect with other moms.
           </p>
         `;
 
         el.innerHTML = html;
 
-        // Auto-attempt to open app on mobile (with fallback)
-        if (isMobile) {
-          window.openInApp = function() {
-            // Try to open the app
-            window.location.href = deepLink;
-
-            // If app doesn't open in 2 seconds, redirect to store
-            setTimeout(function() {
-              if (document.hidden || document.webkitHidden) {
-                // App likely opened, do nothing
-                return;
-              }
-              // App didn't open, show message
-              alert("App not installed or couldn't open. Redirecting to store...");
-              if (isIOS) {
-                window.location.href = "https://apps.apple.com/app/6748379521";
-              } else if (isAndroid) {
-                window.location.href = "https://play.google.com/store/apps/details?id=com.mimedic.migynae.app";
-              }
-            }, 2000);
-          };
-
-          // Auto-try once on page load (for users clicking from messages/email)
-          setTimeout(function() {
-            var iframe = document.createElement("iframe");
-            iframe.style.display = "none";
-            iframe.src = deepLink;
-            document.body.appendChild(iframe);
-            setTimeout(function() {
-              document.body.removeChild(iframe);
-            }, 1000);
-          }, 500);
-        }
       } else {
         // Default 404 for other unknown paths
         el.innerHTML = `

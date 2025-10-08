@@ -44,25 +44,14 @@
       line-height: 1.6;
       margin: 8px 0;
     }
-    .btn-primary {
-      display: inline-block;
-      width: 100%;
-      margin: 20px 0 12px;
+    .banner {
+      background: linear-gradient(135deg, #f4a4a3, #ff8a87);
+      color: white;
       padding: 16px;
       border-radius: 12px;
-      text-decoration: none;
-      border: none;
-      background: #f4a4a3;
-      color: #fff;
-      font-weight: 600;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.2s;
-      box-sizing: border-box;
-    }
-    .btn-primary:active {
-      background: #ff8a87;
-      transform: scale(0.98);
+      margin: 20px 0;
+      font-size: 15px;
+      font-weight: 500;
     }
     .btn-secondary {
       display: inline-block;
@@ -111,9 +100,6 @@
       if (path.startsWith("/share/")) {
         var id = path.split("/").pop();
 
-        // Use custom URL scheme for app deep linking
-        var appScheme = "migynae://share/" + id;
-
         // Build the page content
         var html = `
           <div class="logo">💝</div>
@@ -121,12 +107,18 @@
           <p>View this content in the MiGynae app for the best experience</p>
         `;
 
-        // On mobile, show "Open in App" button
-        if (isMobile) {
+        // On iOS, show message about Smart Banner
+        if (isIOS) {
           html += `
-            <a class="btn-primary" href="${appScheme}" id="openAppBtn">
-              📱 Open in App
-            </a>
+            <div class="banner">
+              📱 Tap "OPEN" in the banner above to view in the app
+            </div>
+          `;
+        } else if (isAndroid) {
+          html += `
+            <div class="banner">
+              📱 Install the app below to view this content
+            </div>
           `;
         }
 

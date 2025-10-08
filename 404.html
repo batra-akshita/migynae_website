@@ -45,7 +45,7 @@
       margin: 8px 0;
     }
     .btn-primary {
-      display: block;
+      display: inline-block;
       width: 100%;
       margin: 20px 0 12px;
       padding: 16px;
@@ -58,14 +58,14 @@
       font-size: 16px;
       cursor: pointer;
       transition: all 0.2s;
+      box-sizing: border-box;
     }
-    .btn-primary:hover {
+    .btn-primary:active {
       background: #ff8a87;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 8px rgba(244, 164, 163, 0.3);
+      transform: scale(0.98);
     }
     .btn-secondary {
-      display: block;
+      display: inline-block;
       width: 100%;
       margin: 8px 0;
       padding: 14px;
@@ -77,8 +77,9 @@
       font-weight: 600;
       font-size: 14px;
       transition: all 0.2s;
+      box-sizing: border-box;
     }
-    .btn-secondary:hover {
+    .btn-secondary:active {
       background: #fff5f5;
     }
     .store-buttons {
@@ -109,7 +110,9 @@
       // If this is a shared link path
       if (path.startsWith("/share/")) {
         var id = path.split("/").pop();
-        var deepLink = "https://mimedic.org/share/" + id;
+
+        // Use custom URL scheme for app deep linking
+        var appScheme = "migynae://share/" + id;
 
         // Build the page content
         var html = `
@@ -118,10 +121,10 @@
           <p>View this content in the MiGynae app for the best experience</p>
         `;
 
-        // On mobile, show "Open in App" button as a direct link
+        // On mobile, show "Open in App" button
         if (isMobile) {
           html += `
-            <a class="btn-primary" href="${deepLink}">
+            <a class="btn-primary" href="${appScheme}" id="openAppBtn">
               📱 Open in App
             </a>
           `;
@@ -133,23 +136,23 @@
 
         if (isIOS) {
           html += `
-            <a class="btn-secondary" href="https://apps.apple.com/app/6748379521" target="_blank">
+            <a class="btn-secondary" href="https://apps.apple.com/app/6748379521">
               📱 Download on App Store
             </a>
           `;
         } else if (isAndroid) {
           html += `
-            <a class="btn-secondary" href="https://play.google.com/store/apps/details?id=com.mimedic.migynae.app" target="_blank">
+            <a class="btn-secondary" href="https://play.google.com/store/apps/details?id=com.mimedic.migynae.app">
               🤖 Get it on Google Play
             </a>
           `;
         } else {
           // Desktop - show both
           html += `
-            <a class="btn-secondary" href="https://apps.apple.com/app/6748379521" target="_blank">
+            <a class="btn-secondary" href="https://apps.apple.com/app/6748379521">
               📱 Download on App Store
             </a>
-            <a class="btn-secondary" href="https://play.google.com/store/apps/details?id=com.mimedic.migynae.app" target="_blank">
+            <a class="btn-secondary" href="https://play.google.com/store/apps/details?id=com.mimedic.migynae.app">
               🤖 Get it on Google Play
             </a>
           `;

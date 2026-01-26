@@ -451,6 +451,124 @@
             line-height: 1.6;
         }
 
+        /* Pregnancy 101 Topics Grid */
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .topic-tile {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 20px 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .topic-tile:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-color);
+        }
+
+        .topic-tile-icon {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .topic-tile-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .topic-tile-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        /* Topic Detail Modal */
+        .topic-detail-section {
+            margin-bottom: 20px;
+        }
+
+        .topic-detail-section h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .topic-detail-section p,
+        .topic-detail-section ul {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .topic-detail-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .topic-detail-section li {
+            padding: 8px 12px;
+            background: #f9fafb;
+            border-left: 3px solid var(--primary-color);
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+
+        .safe-badge {
+            background: #dcfce7;
+            color: #166534;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .warning-badge {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .danger-badge {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
         /* Safe/Unsafe Section */
         .safe-unsafe-grid {
             display: grid;
@@ -676,6 +794,11 @@
                 min-width: 140px;
             }
 
+            .topics-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
             .diet-chart-card {
                 padding: 20px;
             }
@@ -779,11 +902,15 @@
                 document.getElementById('pageTitle').textContent = `${blog.title} - MiGynae Blog`;
                 document.getElementById('pageDescription').content = blog.excerpt;
 
-                // Load full data from first_trimester_diet.json if this is the diet guide
+                // Load full data based on blog type
                 if (blog.id === 'first-trimester-diet-guide') {
                     const dietResponse = await fetch('first_trimester_diet.json');
                     const dietData = await dietResponse.json();
                     renderDietGuide(blog, dietData);
+                } else if (blog.id === 'pregnancy-101') {
+                    const pregnancy101Response = await fetch('pregnancy_101.json');
+                    const pregnancy101Data = await pregnancy101Response.json();
+                    renderPregnancy101(blog, pregnancy101Data);
                 } else {
                     renderRegularBlog(blog);
                 }
@@ -1073,6 +1200,157 @@
         function goToChart(index) {
             currentDietChart = index;
             updateCarousel();
+        }
+
+        function renderPregnancy101(blog, pregnancy101Data) {
+            const mainContent = document.getElementById('mainContent');
+            const topics = pregnancy101Data.topics || [];
+
+            mainContent.innerHTML = `
+                <img src="${blog.image}" alt="${blog.title}" class="banner-image">
+
+                <div class="content-wrapper">
+                    <div class="container">
+                        <a href="blog.html" class="back-link">
+                            <i class="fas fa-arrow-left"></i> Back to Blog
+                        </a>
+
+                        <div class="intro-section">
+                            <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; color: var(--text-dark);">${blog.title}</h1>
+                            <p>${pregnancy101Data.intro.description}</p>
+                        </div>
+
+                        <!-- Topics Section -->
+                        <div class="section-header">
+                            <i class="fas fa-clipboard-check" style="color: #3b82f6;"></i>
+                            <h2>${pregnancy101Data.section_title}</h2>
+                        </div>
+
+                        <div class="topics-grid">
+                            ${topics.map(topic => `
+                                <div class="topic-tile" onclick="showTopicDetails('${topic.title}', ${JSON.stringify(topic).replace(/"/g, '&quot;')})">
+                                    <div class="topic-tile-icon">
+                                        <img src="${getTopicSvgIcon(topic.id)}" alt="${topic.title}">
+                                    </div>
+                                    <div class="topic-tile-title">${topic.title}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <!-- App CTA -->
+                        <div class="app-cta-section">
+                            <div class="app-cta-content">
+                                <h2>Get Expert Pregnancy Guidance</h2>
+                                <p>Download the MiGynae app for personalized advice, daily tips, and professional support throughout your pregnancy journey.</p>
+                                <div class="app-download-buttons">
+                                    <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="btn-android" target="_blank">
+                                        <img src="/images/Playstore_button.png" alt="Get it on Google Play">
+                                    </a>
+                                    <a href="https://apps.apple.com/in/app/migynae/id6748379521" class="btn-ios" target="_blank">
+                                        <img src="/images/apple_logo_button_white.svg" alt="Download on the App Store">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function getTopicSvgIcon(topicId) {
+            const icons = {
+                'cooking': 'images/icons/cooking.svg',
+                'walking': 'images/icons/walking.svg',
+                'jogging': 'images/icons/exercise.svg',
+                'stairs': 'images/icons/stairs.svg',
+                'household': 'images/icons/household.svg',
+                'sex': 'images/icons/sex.svg',
+                'driving': 'images/icons/driving.svg',
+                'sleeping': 'images/icons/sleeping.svg',
+                'fruits': 'images/icons/breakfast.svg'
+            };
+            return icons[topicId] || 'images/icons/habits.svg';
+        }
+
+        function showTopicDetails(title, topic) {
+            const modal = document.getElementById('foodModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+
+            modalTitle.textContent = title;
+
+            let detailsHTML = '';
+
+            // Safe to Continue
+            if (topic.safe_to_continue) {
+                detailsHTML += `
+                    <div class="topic-detail-section">
+                        <span class="safe-badge">
+                            <i class="fas fa-check-circle"></i> Safe to Continue
+                        </span>
+                        <p style="margin-top: 8px;">${topic.safe_to_continue}</p>
+                    </div>
+                `;
+            }
+
+            // Do's
+            if (topic.do) {
+                detailsHTML += `
+                    <div class="topic-detail-section">
+                        <h4><i class="fas fa-thumbs-up" style="color: #10b981;"></i> What You Should Do</h4>
+                        <p>${topic.do}</p>
+                    </div>
+                `;
+            }
+
+            // Don'ts
+            if (topic.dont) {
+                detailsHTML += `
+                    <div class="topic-detail-section">
+                        <h4><i class="fas fa-exclamation-triangle" style="color: #f59e0b;"></i> What to Avoid</h4>
+                        <p>${topic.dont}</p>
+                    </div>
+                `;
+            }
+
+            // Who should avoid
+            if (topic.who_should_avoid) {
+                detailsHTML += `
+                    <div class="topic-detail-section">
+                        <span class="warning-badge">
+                            <i class="fas fa-info-circle"></i> Who Should Avoid
+                        </span>
+                        <p style="margin-top: 8px;">${topic.who_should_avoid}</p>
+                    </div>
+                `;
+            }
+
+            // Who should be careful
+            if (topic.who_should_be_careful) {
+                detailsHTML += `
+                    <div class="topic-detail-section">
+                        <span class="warning-badge">
+                            <i class="fas fa-info-circle"></i> Who Should Be Careful
+                        </span>
+                        <p style="margin-top: 8px;">${topic.who_should_be_careful}</p>
+                    </div>
+                `;
+            }
+
+            // Red Flags
+            if (topic.red_flags) {
+                detailsHTML += `
+                    <div class="topic-detail-section">
+                        <span class="danger-badge">
+                            <i class="fas fa-flag"></i> Red Flags - Stop Immediately
+                        </span>
+                        <p style="margin-top: 8px;">${topic.red_flags}</p>
+                    </div>
+                `;
+            }
+
+            modalBody.innerHTML = detailsHTML;
+            modal.classList.add('active');
         }
 
         function renderRegularBlog(blog) {

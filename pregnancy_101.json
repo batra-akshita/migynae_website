@@ -1,0 +1,86 @@
+{
+  "intro": {
+    "description": "A first-trimester guide to daily life activities\n\nCongratulations on your pregnancy! One of the first doubts most women have is —\n\"Can I continue doing my routine activities?\"\n\nHere's a clear guide on what you can safely do, what needs precautions, and when to stop."
+  },
+  "section_title": "Check what/how much can you do?",
+  "topics": [
+    {
+      "id": "cooking",
+      "title": "Cooking",
+      "safe_to_continue": "Yes, in normal pregnancy.",
+      "do": "Cook in a well-ventilated kitchen, take breaks if you feel nauseous.",
+      "dont": "Lift heavy gas cylinders or large water-filled vessels.",
+      "red_flags": "Dizziness, fainting, or pain while cooking."
+    },
+    {
+      "id": "walking",
+      "title": "Walking",
+      "safe_to_continue": "Yes, Recommended. 20–30 mins most days improves blood flow & mood.",
+      "do": "Walk at a comfortable pace, wear supportive footwear.",
+      "dont": "Walk on uneven surfaces or push beyond comfort.",
+      "who_should_avoid": "Women with spotting, threatened miscarriage, or advised rest.",
+      "red_flags": "Severe abdominal pain, bleeding, dizziness."
+    },
+    {
+      "id": "jogging",
+      "title": "Jogging / Gym Workouts",
+      "safe_to_continue": "Yes, If already doing it before pregnancy – you may continue at a lower intensity.",
+      "do": "Stick to light/moderate exercise, stay hydrated.",
+      "dont": "Try new heavy workouts or contact sports.",
+      "who_should_avoid": "First-timers (who never exercised before), women with twins, placenta previa, or high-risk pregnancy.",
+      "red_flags": "Chest pain, heavy bleeding, shortness of breath."
+    },
+    {
+      "id": "stairs",
+      "title": "Climbing Stairs",
+      "safe_to_continue": "Yes, in a normal pregnancy",
+      "do": "Take it slow, hold the railing.",
+      "dont": "Carry heavy loads while climbing.",
+      "who_should_be_careful": "Women with anemia, high BP, or vaginal bleeding.",
+      "red_flags": "Sudden dizziness, severe breathlessness, cramps."
+    },
+    {
+      "id": "household",
+      "title": "Household Work",
+      "safe_to_continue": "Light chores are safe.",
+      "do": "Sweep, cook, fold clothes, mild cleaning.",
+      "dont": "Lift heavy buckets, bend repeatedly, or mop on wet slippery floors.",
+      "who_should_avoid": "Women with bleeding, cramps, or doctor-advised rest.",
+      "red_flags": "Pain, bleeding, leakage of water."
+    },
+    {
+      "id": "sex",
+      "title": "Sex",
+      "safe_to_continue": "Yes, in a normal pregnancy. Baby is protected inside the uterus.",
+      "do": "Choose comfortable positions, listen to your body.",
+      "dont": "Continue if it causes pain or bleeding.",
+      "who_should_avoid": "Women with placenta previa, bleeding, preterm pains, or previous miscarriages.",
+      "red_flags": "Vaginal bleeding, pain, watery discharge after sex."
+    },
+    {
+      "id": "driving",
+      "title": "Driving",
+      "safe_to_continue": "Yes, safe in early pregnancy.",
+      "do": "Wear seatbelt properly (lap belt under belly, shoulder belt across chest), take breaks on long drives.",
+      "dont": "Drive for very long without stopping.",
+      "who_should_avoid": "Women with severe nausea, fainting spells, or high-risk complications.",
+      "red_flags": "Sudden pain, bleeding, dizziness while driving."
+    },
+    {
+      "id": "sleeping",
+      "title": "Sleeping Position",
+      "safe_to_continue": "First trimester - any comfortable position is fine (back, side, even stomach). Second trimester onwards - recommend to sleep on your left side.",
+      "dont": "Stay flat on your back for long after mid-pregnancy.",
+      "red_flags": "Severe back pain, breathing difficulty in certain positions."
+    },
+    {
+      "id": "fruits",
+      "title": "Fruits, Milk, Nuts & Seeds",
+      "safe_to_continue": "Yes, and highly recommended.",
+      "do": "Wash fruits well, drink pasteurized milk, add nuts/seeds daily.",
+      "dont": "Eat unwashed fruits, raw sprouts, or unpasteurized milk.",
+      "who_should_avoid": "Women with food allergies, lactose intolerance (may need alternatives).",
+      "red_flags": "Rash, swelling, breathing difficulty (allergic reactions)."
+    }
+  ]
+}

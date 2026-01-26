@@ -1,5 +1,15 @@
 [
   {
+    "id": "pregnancy-101",
+    "title": "Pregnancy 101: What Every First-Time Mom Should Know",
+    "excerpt": "Congratulations on your pregnancy! One of the first doubts most women have is — \"Can I continue doing my routine activities?\" Here's a clear guide on what you can safely do, what needs precautions, and when to stop.",
+    "content": "A first-trimester guide to daily life activities.\n\nCongratulations on your pregnancy! One of the first doubts most women have is — \"Can I continue doing my routine activities?\"\n\nHere's a clear guide on what you can safely do, what needs precautions, and when to stop.",
+    "image": "images/blog/Pregnancy_101.webp",
+    "categories": ["first-trimester", "lifestyle"],
+    "date": "2026-01-25",
+    "readTime": "8 min read"
+  },
+  {
     "id": "first-trimester-diet-guide",
     "title": "First Trimester Diet Guide",
     "excerpt": "You've just seen those two pink lines, and life suddenly feels different. Learn what to eat, what to avoid, and sample diet charts for a healthy first trimester.",

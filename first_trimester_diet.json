@@ -1,0 +1,669 @@
+{
+  "intro": {
+    "title": "First Trimester Diet Guide",
+    "description": "You've just seen those two pink lines, and life suddenly feels different. Along with the excitement come so many questions — What should I eat? What should I avoid?\n\nIn the first trimester, your baby is tiny but already starting to grow a heart, brain, and other organs. The food you choose now is the first little gift you give your baby — full of nourishment and care."
+  },
+  "sections": [
+    {
+      "id": "breakfast_options",
+      "title": "Breakfast Options",
+      "description": "Nutritious breakfast ideas to start your day right during the first trimester",
+      "items": [
+        {
+          "name": "Fruits",
+          "description": "Banana, orange, apple, or ripe papaya provide vitamins, fiber, and hydration."
+        },
+        {
+          "name": "Nuts",
+          "description": "Almonds and walnuts are packed with healthy fats and omega-3, great for your baby's brain and eyes."
+        },
+        {
+          "name": "Coconut water",
+          "description": "Natural electrolytes, gentle on the stomach, keeps you hydrated."
+        },
+        {
+          "name": "Roasted makhana",
+          "description": "Provides protein and calcium, perfect for a light snack between meals."
+        },
+        {
+          "name": "Oats porridge",
+          "description": "High in fiber and complex carbs, keeps energy steady and helps prevent constipation."
+        },
+        {
+          "name": "Daliya (broken wheat porridge)",
+          "description": "Easy to digest, rich in protein and iron, supports gentle digestion in early pregnancy."
+        },
+        {
+          "name": "Whole-grain toast with paneer or nut butter",
+          "description": "Combines protein and complex carbs, helps reduce morning nausea."
+        },
+        {
+          "name": "Smoothie / Milkshake",
+          "description": "Fruits with milk or yogurt, plus chia/flax seeds, for hydration, vitamins, and omega-3s."
+        },
+        {
+          "name": "Idli / Dhokla",
+          "description": "Fermented, light, and easy to digest; provides protein and probiotics for gut health."
+        },
+        {
+          "name": "Upma / Poha",
+          "description": "Carbs with vegetables, gentle on the stomach, provides fiber, iron, and B vitamins."
+        },
+        {
+          "name": "Sprouts",
+          "description": "Moong or mixed sprouts are rich in protein, fiber, and iron; great for energy and digestion."
+        },
+        {
+          "name": "Eggs (if non-vegetarian)",
+          "description": "Boiled or scrambled eggs provide high-quality protein and choline for baby's brain development."
+        },
+        {
+          "name": "Paneer cubes",
+          "description": "Protein-rich, easy to digest, adds calcium for bone health."
+        },
+        {
+          "name": "Curd / Yogurt",
+          "description": "Good source of protein and probiotics, supports gut health and digestion."
+        },
+        {
+          "name": "Ragi porridge / Ragi malt",
+          "description": "High in calcium, fiber, and slow-digesting carbs for steady energy."
+        },
+        {
+          "name": "Whole-grain muffins / pancakes (homemade)",
+          "description": "Provides complex carbs and can be fortified with nuts or seeds."
+        },
+        {
+          "name": "Dates",
+          "description": "Natural energy, iron-rich, helps combat early pregnancy fatigue."
+        },
+        {
+          "name": "Peanut butter on toast",
+          "description": "Protein and healthy fats, helps stabilize blood sugar."
+        }
+      ]
+    },
+    {
+      "id": "mid_day_snack",
+      "title": "Mid Day Snack",
+      "description": "Healthy snack options to keep your energy up during the day",
+      "items": [
+        {
+          "name": "Fruits",
+          "description": "Banana, orange, apple, or ripe papaya provide vitamins, fiber, and hydration."
+        },
+        {
+          "name": "Nuts",
+          "description": "Almonds and walnuts are packed with healthy fats and omega-3, great for your baby's brain and eyes."
+        },
+        {
+          "name": "Coconut water",
+          "description": "Natural electrolytes, gentle on the stomach."
+        },
+        {
+          "name": "Roasted makhana",
+          "description": "Protein and calcium, perfect for a light snack."
+        }
+      ]
+    },
+    {
+      "id": "veg_lunch_option",
+      "title": "Veg Lunch Option",
+      "description": "Complete vegetarian lunch options for balanced nutrition",
+      "items": [
+        {
+          "name": "Chapati + dal (moong/masoor) + aloo-methi subzi + salad",
+          "description": "Light, iron-rich, and easy to digest."
+        },
+        {
+          "name": "Rice + rajma + cucumber salad + curd",
+          "description": "Protein-packed and filling."
+        },
+        {
+          "name": "Chapati + chole + bhindi/tinda sabzi",
+          "description": "Balances protein and fiber."
+        },
+        {
+          "name": "Vegetable khichdi + kadhi + beetroot stir fry",
+          "description": "Comfort meal with probiotics."
+        },
+        {
+          "name": "Vegetable pulao + mix dal tadka + raita",
+          "description": "Balanced carbs, proteins, and probiotics."
+        },
+        {
+          "name": "Stuffed paratha (paneer/palak) + curd + salad",
+          "description": "Protein + calcium-rich."
+        },
+        {
+          "name": "Chapati + lauki chana dal + carrot-beans sabzi",
+          "description": "Light, cooling, and nutritious."
+        },
+        {
+          "name": "Curd rice + sautéed spinach + papad",
+          "description": "Probiotic and iron-rich."
+        },
+        {
+          "name": "Vegetable stew + appam/idiyappam",
+          "description": "Mild and nourishing."
+        },
+        {
+          "name": "Tofu/paneer curry + chapati + green salad",
+          "description": "Great vegetarian protein source."
+        }
+      ]
+    },
+    {
+      "id": "bedtime_snacks",
+      "title": "Bedtime Snacks",
+      "description": "Light and nutritious snacks for evening and bedtime during first trimester",
+      "items": [
+        {
+          "name": "Vegetable sandwich or parantha with curd",
+          "description": "Balanced carbs + protein."
+        },
+        {
+          "name": "Warm milk with haldi/elaichi",
+          "description": "Aids sleep and contributes to baby's bone health."
+        },
+        {
+          "name": "Light soups",
+          "description": "Vegetable, tomato, or chicken; hydrating and easy to digest."
+        }
+      ]
+    },
+    {
+      "id": "non_veg_lunch_option",
+      "title": "Non-veg Lunch Option",
+      "description": "Protein-rich non-vegetarian lunch options for complete nutrition. Tip: Include spinach, carrot, beetroot—they help your baby's eyes and keep your digestion smooth.",
+      "items": [
+        {
+          "name": "Chapati + egg curry + bhindi sabzi + salad",
+          "description": "Protein + fiber."
+        },
+        {
+          "name": "Rice + fish curry (lightly spiced) + lauki sabzi",
+          "description": "Omega-3 + hydration."
+        },
+        {
+          "name": "Grilled chicken + chapati + spinach dal",
+          "description": "Iron + protein combo."
+        },
+        {
+          "name": "Rice + chicken curry + beans-poriyal",
+          "description": "Wholesome South Indian style meal."
+        },
+        {
+          "name": "Chapati + mutton soup + carrot-beans sabzi",
+          "description": "Strengthens hemoglobin."
+        },
+        {
+          "name": "Egg bhurji + chapati + aloo-gobhi sabzi",
+          "description": "Quick, filling protein meal."
+        },
+        {
+          "name": "Fish fry (light pan fry) + dal tadka + rice",
+          "description": "Omega-3 + fiber from dal."
+        },
+        {
+          "name": "Light chicken biryani (homemade) + cucumber raita",
+          "description": "High fiber content."
+        }
+      ]
+    }
+  ],
+  "sample_diet_charts": [
+    {
+      "id": "chart_1",
+      "title": "Vegetarian Daily Diet Chart",
+      "description": "A balanced vegetarian meal plan for first trimester nutrition",
+      "schedule": [
+        {
+          "time": "7:00 AM",
+          "meal": "Morning (empty stomach)",
+          "items": ["Plain warm water or ginger-lemon water (helps nausea, better than jeera water)", "5–6 soaked almonds + 1 walnut"]
+        },
+        {
+          "time": "9:00 AM",
+          "meal": "Breakfast",
+          "items": ["Vegetable poha/upma/idli (choose 1) + glass of milk (instead of curd, which may worsen nausea in the morning)"]
+        },
+        {
+          "time": "11:00 AM",
+          "meal": "Mid-morning snack",
+          "items": ["Seasonal fruit like apple, pear, or papaya (avoid unripe papaya)", "OR 1 banana if nausea is not severe"]
+        },
+        {
+          "time": "1:00 PM",
+          "meal": "Lunch",
+          "items": ["2 rotis OR 1 small portion rice", "Dal / chana / rajma / paneer for protein", "Seasonal sabzi", "Salad (cucumber, carrot, tomato)"]
+        },
+        {
+          "time": "4:00 PM",
+          "meal": "Evening snack",
+          "items": ["Roasted chana or handful of dry fruits/dates + lemon water or coconut water"]
+        },
+        {
+          "time": "7:30 PM",
+          "meal": "Dinner (light, easy to digest)",
+          "items": ["Vegetable daliya / khichdi / curd rice (if well tolerated)", "Add 1 small bowl of curd if not feeling nauseous"]
+        },
+        {
+          "time": "10:00 PM",
+          "meal": "Bedtime",
+          "items": ["Warm turmeric milk OR plain warm milk (helps relax and adds calcium)"]
+        }
+      ]
+    },
+    {
+      "id": "chart_2",
+      "title": "Non-Vegetarian Diet Chart",
+      "description": "Protein-rich meal plan with non-vegetarian options for first trimester",
+      "schedule": [
+        {
+          "time": "7:00 AM",
+          "meal": "Morning (empty stomach)",
+          "items": ["Warm lemon water OR plain warm water", "1 khakra / 2 whole wheat crackers", "5–6 soaked almonds (replace later in day if nausea in morning)"]
+        },
+        {
+          "time": "9:00 AM",
+          "meal": "Breakfast",
+          "items": ["2–3 soft idlis + sambar (dal + veggies)", "If non-vegetarian: 1 boiled egg"]
+        },
+        {
+          "time": "11:00 AM",
+          "meal": "Mid-Morning Snack",
+          "items": ["1 apple or pear", "2–3 walnuts + 2 soaked dates (iron + natural sweetness)"]
+        },
+        {
+          "time": "1:00 PM",
+          "meal": "Lunch",
+          "items": ["2 chapatis OR small portion rice (not both in large qty)", "Protein: chicken curry", "Seasonal vegetable sabzi", "Small bowl curd / raita"]
+        },
+        {
+          "time": "4:00 PM",
+          "meal": "Evening Snack",
+          "items": ["Moong sprouts chaat with cucumber, tomato, lemon", "OR roasted makhana / chana if sprouts cause gas"]
+        },
+        {
+          "time": "7:30 PM",
+          "meal": "Dinner (light, easy to digest)",
+          "items": ["Vegetable dalia khichdi (protein + fiber)", "Add boiled egg curry (1 egg)"]
+        },
+        {
+          "time": "10:00 PM",
+          "meal": "Bedtime",
+          "items": ["Warm milk with elaichi", "Optional: 1 dry fig (iron + fiber)"]
+        }
+      ]
+    },
+    {
+      "id": "chart_3",
+      "title": "Alternate Vegetarian Diet Chart",
+      "description": "Another nutritious vegetarian meal plan with protein rotation and variety",
+      "schedule": [
+        {
+          "time": "7:00 AM",
+          "meal": "Morning (empty stomach)",
+          "items": ["Ginger-infused warm water (helps nausea)", "2 soaked dates + 3–4 soaked almonds (instead of biscuits/khakra)"]
+        },
+        {
+          "time": "9:00 AM",
+          "meal": "Breakfast",
+          "items": ["Vegetable besan cheela / moong dal chilla with mint chutney", "1 small glass buttermilk (if tolerated, otherwise skip)"]
+        },
+        {
+          "time": "11:00 AM",
+          "meal": "Mid-Morning Snack",
+          "items": ["Fruit bowl: papaya (ripe), pomegranate, or apple (small portion)", "1 glass coconut water for hydration"]
+        },
+        {
+          "time": "1:00 PM",
+          "meal": "Lunch",
+          "items": ["2 multigrain chapatis", "Paneer bhurji / soya curry (protein rotation instead of only dal)", "Seasonal sabzi (palak, lauki, beans, bhindi — light & fibrous)", "Small bowl curd or raita"]
+        },
+        {
+          "time": "4:00 PM",
+          "meal": "Evening Snack",
+          "items": ["Handful of roasted foxnuts (makhana) or boiled corn", "1 fruit (guava/orange/pear)"]
+        },
+        {
+          "time": "7:30 PM",
+          "meal": "Dinner (light)",
+          "items": ["Vegetable khichdi / dalia with mixed veggies", "Light sabzi (lauki, tinda, ridge gourd)", "Salad (carrot, cucumber sticks)"]
+        },
+        {
+          "time": "10:00 PM",
+          "meal": "Bedtime",
+          "items": ["Warm turmeric milk", "Optional: 1 small dry fig or date for iron + natural sweetness"]
+        }
+      ]
+    },
+    {
+      "id": "chart_4",
+      "title": "Alternate Non-Vegetarian Diet Chart",
+      "description": "Another protein-rich meal plan with light dinner and flexible options",
+      "schedule": [
+        {
+          "time": "7:00 AM",
+          "meal": "Morning (empty stomach)",
+          "items": ["Ginger infused warm water or Warm lemon water OR plain warm water", "1 khakra / 2 whole wheat crackers", "5–6 soaked almonds"]
+        },
+        {
+          "time": "9:00 AM",
+          "meal": "Breakfast",
+          "items": ["2–3 idlis + sambar (light, protein-rich)", "1 boiled egg"]
+        },
+        {
+          "time": "11:00 AM",
+          "meal": "Mid-Morning Snack",
+          "items": ["1 seasonal fruit (apple, pear, or orange)", "2–3 walnuts + 1–2 soaked dates"]
+        },
+        {
+          "time": "1:00 PM",
+          "meal": "Lunch",
+          "items": ["2 chapatis OR ½ cup rice (avoid both in large amounts together)", "Protein: chicken curry", "1 seasonal sabzi", "Small bowl curd / raita"]
+        },
+        {
+          "time": "4:00 PM",
+          "meal": "Evening Snack",
+          "items": ["Moong sprouts chaat with cucumber, tomato, lemon, if sprouts cause bloating, replace with roasted chana / makhana"]
+        },
+        {
+          "time": "7:30 PM",
+          "meal": "Dinner (light)",
+          "items": ["Vegetable dalia khichdi OR plain dal + lauki / palak sabzi", "1 boiled egg (instead of heavy curry at night)"]
+        },
+        {
+          "time": "10:00 PM",
+          "meal": "Bedtime",
+          "items": ["Warm milk with elaichi OR haldi", "Optional: 1 dry fig for natural iron + fiber"]
+        }
+      ]
+    }
+  ],
+  "safe_unsafe_categories": [
+    {
+      "id": "dry_fruits",
+      "title": "Dry Fruits",
+      "icon_color": "orange",
+      "safe": [
+        {
+          "name": "Almonds",
+          "amount": "5–6 soaked daily",
+          "benefits": "brain & bone development"
+        },
+        {
+          "name": "Walnuts", 
+          "amount": "2–3 daily",
+          "benefits": "omega-3 for baby's brain & eyes"
+        },
+        {
+          "name": "Cashews",
+          "amount": "4–5 daily", 
+          "benefits": "iron & healthy fats"
+        },
+        {
+          "name": "Pistachios",
+          "amount": "6–8 daily",
+          "benefits": "protein & antioxidants"
+        },
+        {
+          "name": "Raisins / Kishmish",
+          "amount": "6–8 soaked",
+          "benefits": "iron, prevents anemia"
+        },
+        {
+          "name": "Dates",
+          "amount": "2–3 daily",
+          "benefits": "energy & fiber"
+        }
+      ],
+      "unsafe": [
+        {
+          "name": "Nutmeg (Jaiphal)",
+          "reason": "In excess, may act as uterine stimulant."
+        },
+        {
+          "name": "Peanuts (raw, street roasted)",
+          "reason": "Caution: Can trigger allergies; avoid raw/stale ones."
+        },
+        {
+          "name": "Excess Dates (>4–5/day)",
+          "reason": "May raise blood sugar & cause excess weight gain early."
+        }
+      ]
+    },
+    {
+      "id": "seeds_spices",
+      "title": "Seeds/Spices",
+      "icon_color": "green",
+      "safe": [
+        {
+          "name": "Flax Seeds",
+          "amount": "1 tsp powdered",
+          "benefits": "omega-3 & fiber; lightly roasted"
+        },
+        {
+          "name": "Chia Seeds",
+          "amount": "1 tsp soaked in water/milk",
+          "benefits": "omega-3 & hydration"
+        },
+        {
+          "name": "Sunflower Seeds",
+          "amount": "1–2 tsp",
+          "benefits": "vitamin E & healthy fats"
+        },
+        {
+          "name": "Pumpkin Seeds",
+          "amount": "1–2 tsp",
+          "benefits": "zinc & protein"
+        },
+        {
+          "name": "Sesame Seeds (Til)",
+          "amount": "1 tsp",
+          "benefits": "calcium & iron; lightly roasted"
+        }
+      ],
+      "unsafe": [
+        {
+          "name": "Fenugreek Seeds (Methi in large amounts)",
+          "reason": "May trigger uterine contractions if overused."
+        },
+        {
+          "name": "Ajwain (Carom seeds) in high amounts",
+          "reason": "Too stimulating for uterus in early pregnancy."
+        },
+        {
+          "name": "Mustard Seeds (in medicinal doses)",
+          "reason": "May cause uterine irritation. Normal cooking amount is fine."
+        }
+      ]
+    },
+    {
+      "id": "drinks", 
+      "title": "Drinks",
+      "icon_color": "blue",
+      "safe": [
+        {
+          "name": "Methi Water",
+          "amount": "[LIMITED] 1 cup",
+          "benefits": "home-prepared; avoid concentrated doses"
+        },
+        {
+          "name": "Ajwain Water",
+          "amount": "[LIMITED] ½ tsp seeds in warm water",
+          "benefits": "home-prepared only"
+        },
+        {
+          "name": "Lemon Water",
+          "amount": "1 cup",
+          "benefits": "nausea relief & hydration"
+        },
+        {
+          "name": "Coconut Water",
+          "amount": "1 glass",
+          "benefits": "electrolytes & hydration"
+        },
+        {
+          "name": "Buttermilk / Chaas",
+          "amount": "1 glass",
+          "benefits": "home-prepared; aids digestion"
+        },
+        {
+          "name": "Lassi (Sweet / Salted)",
+          "amount": "1 glass",
+          "benefits": "home-prepared yogurt; digestion & calcium"
+        },
+        {
+          "name": "Jaljeera",
+          "amount": "1 glass",
+          "benefits": "home-prepared; moderate spice"
+        },
+        {
+          "name": "Aam Panna",
+          "amount": "[Limited] 1 glass",
+          "benefits": "home-prepared from ripe mango"
+        },
+        {
+          "name": "Masala Chai / Tea",
+          "amount": "1 cup",
+          "benefits": "home-prepared; limit caffeine"
+        },
+        {
+          "name": "Warm Milk with Haldi / Elaichi",
+          "amount": "1 glass",
+          "benefits": "home-prepared; calcium & sleep aid"
+        }
+      ],
+      "unsafe": [
+        {
+          "name": "Packaged Fruit Juices",
+          "reason": "High sugar, preservatives; no real nutrition."
+        },
+        {
+          "name": "Soda / Cola / Cold Drinks",
+          "reason": "High caffeine, sugar, and gas → bloating."
+        },
+        {
+          "name": "Energy Drinks (Red Bull, etc.)",
+          "reason": "Too much caffeine & artificial additives."
+        },
+        {
+          "name": "Alcohol",
+          "reason": "Directly linked to miscarriage, fetal alcohol syndrome."
+        },
+        {
+          "name": "Excess Coffee (>1 cup/day)",
+          "reason": "High caffeine → miscarriage risk, low birth weight."
+        },
+        {
+          "name": "Herbal Teas (unknown blends)",
+          "reason": "Many herbs (like aloe, licorice, sage) unsafe in pregnancy."
+        },
+        {
+          "name": "Unpasteurized Milk / Lassi",
+          "reason": "Risk of infection (listeria, brucella)."
+        },
+        {
+          "name": "Excess Aam Panna (from raw mango)",
+          "reason": "May trigger uterine contractions in some women."
+        }
+      ]
+    },
+    {
+      "id": "foods",
+      "title": "Foods", 
+      "icon_color": "purple",
+      "safe": [
+        {
+          "name": "Vegetable Upma",
+          "amount": "1 bowl",
+          "benefits": "light, easy to digest, energy"
+        },
+        {
+          "name": "Poha with Peanuts",
+          "amount": "1 bowl",
+          "benefits": "iron & protein"
+        },
+        {
+          "name": "Idli with Sambar",
+          "amount": "2–3 idlis",
+          "benefits": "fermented, protein-rich"
+        },
+        {
+          "name": "Dhokla",
+          "amount": "3–4 pieces",
+          "benefits": "steamed & light"
+        },
+        {
+          "name": "Roasted Makhana",
+          "amount": "1 cup",
+          "benefits": "calcium & protein"
+        },
+        {
+          "name": "Paneer Tikka / Grilled Paneer",
+          "amount": "50–75 g",
+          "benefits": "protein & calcium, home-prepared"
+        },
+        {
+          "name": "Vegetable Soup",
+          "amount": "1 bowl",
+          "benefits": "light, hydrating"
+        },
+        {
+          "name": "Egg (Boiled / Omelette)",
+          "amount": "1–2 eggs",
+          "benefits": "fully cooked; protein & choline"
+        },
+        {
+          "name": "Chicken Curry / Grilled Chicken",
+          "amount": "50–75 g",
+          "benefits": "home-cooked; protein & omega-3"
+        }
+      ],
+      "unsafe": [
+        {
+          "name": "Papaya (raw / semi-ripe)",
+          "reason": "Contains latex-like compounds that may trigger uterine contractions."
+        },
+        {
+          "name": "Pineapple (excess / raw)",
+          "reason": "Contains bromelain, which may soften cervix if taken in large amounts."
+        },
+        {
+          "name": "Street Food (golgappa, chaat, samosa, pakora)",
+          "reason": "High risk of infection, contamination & acidity."
+        },
+        {
+          "name": "Processed Cheese / Mayonnaise",
+          "reason": "Risk of bacterial contamination if not pasteurized."
+        },
+        {
+          "name": "Fried Snacks (bhujia, namkeen, chips)",
+          "reason": "High in trans fats, salt → bloating, acidity, weight gain."
+        },
+        {
+          "name": "Pickles (excess)",
+          "reason": "Too much salt & preservatives, worsens water retention & BP."
+        },
+        {
+          "name": "Undercooked Meat / Fish",
+          "reason": "May contain parasites (toxoplasmosis, listeria) harmful in pregnancy."
+        },
+        {
+          "name": "High Mercury Fish (Shark, Mackerel, Swordfish)",
+          "reason": "Mercury affects baby's brain & nervous system."
+        },
+        {
+          "name": "Liver (Kaleja / Liver curry)",
+          "reason": "Excess vitamin A can cause birth defects."
+        },
+        {
+          "name": "Half-Boiled Eggs",
+          "reason": "Risk of salmonella infection. Must be fully cooked."
+        }
+      ]
+    }
+  ]
+}

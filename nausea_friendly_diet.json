@@ -1,0 +1,511 @@
+{
+  "intro": {
+    "description": "Morning sickness hits anytime, not just mornings. Your hormones are in overdrive, making smells and digestion tricky.\n\nBut don't worry — a few smart eating hacks can make all the difference!"
+  },
+  "sections": [
+    {
+      "id": "early_morning",
+      "title": "Early Morning Options",
+      "description": "Gentle foods to ease morning nausea and start your day right",
+      "pro_tip": "Keep snacks by your bedside for easy reach. A light, dry snack before you even get out of bed can settle your tummy and prevent that sudden wave of sickness caused by stomach acid build up overnight.",
+      "items": [
+        {
+          "name": "Marie biscuits / dry toast / khakra",
+          "description": "Gentle carbs that soak up stomach acid and give quick energy."
+        },
+        {
+          "name": "Ajwain water",
+          "description": "Eases bloating and indigestion."
+        },
+        {
+          "name": "Ginger-honey water",
+          "description": "Calms nausea naturally."
+        },
+        {
+          "name": "Lemon water",
+          "description": "Refreshing citrus kick to settle the stomach."
+        },
+        {
+          "name": "Handful of soaked almonds or raisins",
+          "description": "Gentle on stomach, provides nutrients and energy."
+        },
+        {
+          "name": "A slice of plain toast with honey",
+          "description": "Simple carbs with natural sweetness for quick energy."
+        },
+        {
+          "name": "Dry murmura or cornflakes handful",
+          "description": "Light, crunchy, and easy to digest."
+        }
+      ]
+    },
+    {
+      "id": "breakfast",
+      "title": "Breakfast",
+      "description": "Nausea-friendly breakfast options to keep you nourished",
+      "pro_tip": "A balanced breakfast keeps blood sugar steady and prevents mid-morning dips that can trigger nausea.",
+      "items": [
+        {
+          "name": "Vegetable upma / poha with peanuts",
+          "description": "Light, filling, and iron-rich."
+        },
+        {
+          "name": "Idli with chutney or sambar",
+          "description": "Soft, fermented, easy to digest."
+        },
+        {
+          "name": "Besan chilla / moong dal chilla",
+          "description": "Protein-rich, non-greasy."
+        },
+        {
+          "name": "Smoothie with banana + yogurt + a dash of honey",
+          "description": "Cool, soothing, and energizing."
+        },
+        {
+          "name": "Vegetable daliya (broken wheat porridge)",
+          "description": "Gentle on stomach, provides sustained energy."
+        },
+        {
+          "name": "Oats porridge with apple/pear",
+          "description": "Fiber-rich and mild, helps digestion."
+        },
+        {
+          "name": "Rava idli with mild coconut chutney",
+          "description": "Light, fluffy, and easy to digest."
+        },
+        {
+          "name": "Stuffed paratha (lauki/paneer, very light, cooked with less oil)",
+          "description": "Nutritious and filling without being heavy."
+        },
+        {
+          "name": "Sabudana khichdi (light, non-spicy)",
+          "description": "Easy on stomach, provides quick energy."
+        }
+      ]
+    },
+    {
+      "id": "mid_morning",
+      "title": "Mid Morning Snack",
+      "description": "Light snacks to maintain energy without triggering nausea",
+      "pro_tip": "Small bites between meals stop your stomach from going empty and keep queasiness away.",
+      "items": [
+        {
+          "name": "Fresh fruits (apple, pear, papaya, watermelon)",
+          "description": "Hydrating and gentle on the stomach."
+        },
+        {
+          "name": "Handful of roasted chana / nuts",
+          "description": "Protein-packed, satisfying, and easy to carry."
+        },
+        {
+          "name": "A glass of coconut water or buttermilk (chaas)",
+          "description": "Refreshing, cooling, and aids digestion."
+        },
+        {
+          "name": "A boiled sweet potato",
+          "description": "Naturally sweet, filling, and nutrient-rich."
+        },
+        {
+          "name": "1 small bowl curd with a pinch of jeera powder",
+          "description": "Probiotic-rich, soothes the stomach."
+        },
+        {
+          "name": "Fruit chaat (mild, no chaat masala)",
+          "description": "Fresh, light, and vitamin-packed."
+        },
+        {
+          "name": "Fresh pomegranate seeds",
+          "description": "Sweet, crunchy, and full of antioxidants."
+        },
+        {
+          "name": "Lassi (light, unsweetened)",
+          "description": "Cool and soothing for digestion."
+        }
+      ]
+    },
+    {
+      "id": "lunch",
+      "title": "Lunch",
+      "description": "Nutritious lunch options that are easy on the stomach",
+      "pro_tip": "Keep lunch light and balanced — simple carbs, lean protein, and mild veggies. Avoid oily gravies and excess spices to aid digestion and reduce nausea.",
+      "items": [
+        {
+          "name": "Steamed rice + dal + light sabzi (like lauki, tinda, or beans)",
+          "description": "Complete meal with balanced nutrition and easy digestion."
+        },
+        {
+          "name": "Phulka + curd + boiled or stir-fried vegetables",
+          "description": "Light, wholesome, and gentle on the stomach."
+        },
+        {
+          "name": "Curd rice (classic nausea-soother)",
+          "description": "Cool, soothing, and perfect for settling the stomach."
+        },
+        {
+          "name": "Vegetable daliya khichdi with curd",
+          "description": "Comfort food that's easy to digest and nutritious."
+        },
+        {
+          "name": "Jeera rice + plain curd + stir-fried bhindi",
+          "description": "Simple flavors that won't trigger nausea."
+        },
+        {
+          "name": "Soft thepla with curd",
+          "description": "Mild, satisfying, and easy on digestion."
+        },
+        {
+          "name": "Vegetable oats upma with curd",
+          "description": "Fiber-rich and filling without being heavy."
+        },
+        {
+          "name": "Moong dal khichdi + cucumber raita",
+          "description": "Light, protein-rich, and cooling."
+        }
+      ]
+    },
+    {
+      "id": "evening_snack",
+      "title": "Evening Snack",
+      "description": "Light evening options to keep nausea at bay",
+      "pro_tip": "Evening hunger and long gaps often make nausea worse — a light snack in the evening keeps energy up.",
+      "items": [
+        {
+          "name": "Khakra / murmura chivda / roasted makhana",
+          "description": "Crunchy, light, and satisfying."
+        },
+        {
+          "name": "Vegetable sandwich with mint chutney",
+          "description": "Fresh and filling without being heavy."
+        },
+        {
+          "name": "Lemon tea or ginger tea (light, not strong)",
+          "description": "Soothing and helps settle the stomach."
+        },
+        {
+          "name": "Suji dhokla (steamed, light)",
+          "description": "Soft, fluffy, and easy to digest."
+        },
+        {
+          "name": "Vegetable idli (carrot/beans grated into batter)",
+          "description": "Nutritious and gentle on the stomach."
+        },
+        {
+          "name": "Boiled corn with a dash of lemon",
+          "description": "Sweet, satisfying, and fiber-rich."
+        },
+        {
+          "name": "Baked sweet potato fries",
+          "description": "Naturally sweet and filling."
+        },
+        {
+          "name": "A light besan pancake with mint chutney",
+          "description": "Protein-rich and flavorful without being heavy."
+        }
+      ]
+    },
+    {
+      "id": "dinner",
+      "title": "Dinner",
+      "description": "Easy-to-digest dinner options for comfortable sleep",
+      "pro_tip": "Heavy dinners can trigger night-time nausea, bloating, and acidity. Opt for a simple, light meal to stay comfortable through the night.",
+      "items": [
+        {
+          "name": "Vegetable khichdi with curd",
+          "description": "Comfort food that's gentle and easy to digest."
+        },
+        {
+          "name": "Phulka + dal + sabzi (mildly spiced)",
+          "description": "Balanced meal without heavy spices."
+        },
+        {
+          "name": "Light pulao with peas / carrots and curd",
+          "description": "Mild flavors with vegetables for nutrition."
+        },
+        {
+          "name": "Tomato rice with cucumber raita",
+          "description": "Tangy, light, and refreshing."
+        },
+        {
+          "name": "Roti + ridge gourd (turai) sabzi + curd",
+          "description": "Light vegetable with cooling curd."
+        },
+        {
+          "name": "Vegetable stew + appam/idiyappam (if South Indian options are okay)",
+          "description": "Mild, coconut-based, and soothing."
+        },
+        {
+          "name": "Moong dal dosa (pessarattu) with chutney",
+          "description": "Protein-rich and easy on the stomach."
+        },
+        {
+          "name": "Light paneer bhurji + phulka + curd",
+          "description": "Protein-packed without being heavy."
+        }
+      ]
+    },
+    {
+      "id": "bedtime_snack",
+      "title": "Bedtime Snack",
+      "description": "Light bedtime snacks to prevent morning nausea",
+      "pro_tip": "Going to bed on an empty stomach can trigger midnight nausea. So we advise you to take a small snack at bedtime if you have taken your dinner early.",
+      "items": [
+        {
+          "name": "A glass of warm milk with a pinch of turmeric",
+          "description": "Calming and helps with sleep."
+        },
+        {
+          "name": "A small banana",
+          "description": "Easy to digest and naturally soothing."
+        },
+        {
+          "name": "Handful of dry fruits (dates, raisins, almonds)",
+          "description": "Nutrient-rich and satisfying."
+        },
+        {
+          "name": "Handful of puffed rice (murmura)",
+          "description": "Light and won't make you feel heavy."
+        },
+        {
+          "name": "A small date or two (for natural sweetness)",
+          "description": "Natural energy and helps settle the stomach."
+        },
+        {
+          "name": "½ cup kheer made with oats or suji (light, not very sweet)",
+          "description": "Comforting and mild."
+        },
+        {
+          "name": "A few walnuts with warm milk",
+          "description": "Omega-3 rich and calming."
+        },
+        {
+          "name": "A small digestive biscuit with milk",
+          "description": "Simple and gentle before bed."
+        }
+      ]
+    }
+  ],
+  "sample_diet_charts": [
+    {
+      "id": "chart_1",
+      "title": "Vegetarian Diet Plan",
+      "description": "7 Post Meals – Eat small, frequent meals every 2–3 hours",
+      "schedule": [
+        {
+          "time": "Early Morning",
+          "meal": "Within 15–20 min of waking up",
+          "items": ["2 plain Marie biscuits / 1 dry toast (no butter)", "Small sip of warm water with few drops of lemon"]
+        },
+        {
+          "time": "Breakfast",
+          "meal": "After 1–1.5 hrs",
+          "items": ["1 small bowl of oats porridge with milk (lightly sweetened with jaggery)", "OR 2 idlis with coconut chutney"]
+        },
+        {
+          "time": "Mid-Morning",
+          "meal": "2 hrs later",
+          "items": ["1 small banana OR ½ apple", "4 soaked almonds + 2 walnuts"]
+        },
+        {
+          "time": "Lunch",
+          "meal": "After 2–2.5 hrs",
+          "items": ["1 small bowl plain khichdi (rice + moong dal, lightly spiced)", "½ cup curd (helps acidity)", "1 small serving of boiled seasonal vegetables"]
+        },
+        {
+          "time": "Evening",
+          "meal": "2 hrs later",
+          "items": ["1 glass buttermilk OR coconut water", "2 whole wheat crackers"]
+        },
+        {
+          "time": "Dinner",
+          "meal": "2–2.5 hrs before bedtime",
+          "items": ["2 phulkas (without ghee) + light vegetable curry (lauki/tori/tinda)", "½ cup curd"]
+        },
+        {
+          "time": "Bedtime",
+          "meal": "30 min before sleep",
+          "items": ["1 cup warm milk (add pinch of elaichi/haldi if tolerated)", "1 digestive biscuit"]
+        }
+      ]
+    },
+    {
+      "id": "chart_2",
+      "title": "Non-Vegetarian Diet Plan",
+      "description": "7 Post Meals – Eat small, frequent meals every 2–3 hours",
+      "schedule": [
+        {
+          "time": "Early Morning",
+          "meal": "Within 15–20 min of waking up",
+          "items": ["2 plain Marie biscuits / 1 dry toast", "Sip of lukewarm water with lemon"]
+        },
+        {
+          "time": "Breakfast",
+          "meal": "After 1–1.5 hrs",
+          "items": ["1 boiled egg + 1 slice whole wheat bread", "OR 1 small bowl of suji upma with vegetables"]
+        },
+        {
+          "time": "Mid-Morning",
+          "meal": "2 hrs later",
+          "items": ["½ apple OR 1 pear", "4 soaked almonds + 2 cashews"]
+        },
+        {
+          "time": "Lunch",
+          "meal": "After 2–2.5 hrs",
+          "items": ["1 small bowl plain rice + 1 small bowl yellow dal", "1 piece grilled/boiled fish (avoid oily/fried) OR 1 small boiled chicken piece (skinless)", "½ cup curd"]
+        },
+        {
+          "time": "Evening",
+          "meal": "2 hrs later",
+          "items": ["1 glass buttermilk / tender coconut water", "1 whole wheat cracker"]
+        },
+        {
+          "time": "Dinner",
+          "meal": "2–2.5 hrs before bedtime",
+          "items": ["2 chapatis + 1 bowl light chicken stew OR vegetable curry", "½ cup curd"]
+        },
+        {
+          "time": "Bedtime",
+          "meal": "30 min before sleep",
+          "items": ["1 cup warm milk with a digestive biscuit"]
+        }
+      ]
+    },
+    {
+      "id": "chart_3",
+      "title": "Vegetarian Diet Plan (For nausea & acidity)",
+      "description": "7 small meals designed to manage nausea and acidity",
+      "schedule": [
+        {
+          "time": "Early Morning",
+          "meal": "Within 15–20 min of waking",
+          "items": ["4–5 plain khakhris or 2 whole wheat rusk", "Warm ginger-honey water (just ½ tsp honey + 2–3 drops ginger juice in warm water)"]
+        },
+        {
+          "time": "Breakfast",
+          "meal": "1–1.5 hrs later",
+          "items": ["2 small besan chillas with grated carrot & coriander", "OR 1 small bowl poha with peanuts & lemon"]
+        },
+        {
+          "time": "Mid-Morning",
+          "meal": "2 hrs later",
+          "items": ["1 guava (peeled) OR 1 small bowl papaya (ripe)", "1 tsp roasted flaxseeds OR sunflower seeds"]
+        },
+        {
+          "time": "Lunch",
+          "meal": "After 2–2.5 hrs",
+          "items": ["1 small bowl curd rice (add grated cucumber)", "1 small katori vegetable (bhindi, tori, or lauki – lightly cooked)", "1 phulka"]
+        },
+        {
+          "time": "Evening",
+          "meal": "2 hrs later",
+          "items": ["1 glass fresh lemonade (without soda) OR tender coconut water", "2 digestive biscuits"]
+        },
+        {
+          "time": "Dinner",
+          "meal": "2–2.5 hrs before bedtime",
+          "items": ["2 vegetable dal parathas (without much oil) + plain curd", "OR 1 bowl vegetable daliya (broken wheat porridge)"]
+        },
+        {
+          "time": "Bedtime",
+          "meal": "30 min before sleep",
+          "items": ["1 small glass warm milk with ½ tsp gulkand (helps acidity)"]
+        }
+      ]
+    },
+    {
+      "id": "chart_4",
+      "title": "Non-Vegetarian Diet Plan (For nausea & acidity)",
+      "description": "7 small meals designed to manage nausea and acidity",
+      "schedule": [
+        {
+          "time": "Early Morning",
+          "meal": "Within 15–20 min of waking",
+          "items": ["2 dry crackers OR 1 small banana", "Sip of lukewarm water with fennel (saunf)"]
+        },
+        {
+          "time": "Breakfast",
+          "meal": "1–1.5 hrs later",
+          "items": ["1 boiled egg white omelette (lightly cooked, no spices)", "1 slice brown bread with light butter OR avocado spread"]
+        },
+        {
+          "time": "Mid-Morning",
+          "meal": "2 hrs later",
+          "items": ["1 small orange OR handful of grapes", "5 soaked almonds"]
+        },
+        {
+          "time": "Lunch",
+          "meal": "After 2–2.5 hrs",
+          "items": ["1 cup plain rice + 1 small bowl moong dal", "1 piece grilled chicken OR soft-boiled fish (avoid heavy spices)", "½ cup curd"]
+        },
+        {
+          "time": "Evening",
+          "meal": "2 hrs later",
+          "items": ["1 glass chaas (buttermilk with roasted cumin)", "1 khakhra OR 2 wheat crackers"]
+        },
+        {
+          "time": "Dinner",
+          "meal": "2–2.5 hrs before bedtime",
+          "items": ["2 soft chapatis with light chicken curry (less oil, no red chilli)", "Steamed vegetables (beans, carrot, lauki) on the side"]
+        },
+        {
+          "time": "Bedtime",
+          "meal": "30 min before sleep",
+          "items": ["1 glass warm milk (optional: pinch of nutmeg for calming sleep)", "1 digestive biscuit"]
+        }
+      ]
+    }
+  ],
+  "dos_donts": [
+    {
+      "id": "foods",
+      "title": "Foods",
+      "description": "Smart food choices to manage nausea",
+      "dos": [
+        "Ginger (adrak) - Contains natural compounds (gingerols and shogaols) that calm the stomach and reduce signals to the brain's nausea center.",
+        "Lemon - The fresh citrus smell and sour taste stimulate saliva and reduce that metallic taste, giving quick relief from nausea.",
+        "Mint (pudina) - Has a cooling effect that relaxes stomach muscles and helps settle queasiness.",
+        "Dry snacks (toast, crackers, biscuits, khakra) - Absorb stomach acid and prevent the empty-stomach trigger that worsens nausea.",
+        "Cold foods (fruits, smoothies, curd rice, yogurt) - Give nutrition without strong smells (which often trigger nausea).",
+        "Small frequent meals - Keeps blood sugar steady and prevents the 'empty stomach' nausea spiral.",
+        "Plain rice, potatoes, or oats - Bland, easy-to-digest carbs that sit light in the stomach.",
+        "Protein-rich snacks (nuts, roasted chana, paneer cubes, lentil soup) - Protein stabilizes blood sugar and keeps you fuller, reducing nausea episodes.",
+        "Fluids (water, coconut water, ORS, light herbal teas) - Dehydration worsens nausea — sipping fluids keeps electrolytes balanced and eases dizziness.",
+        "Vitamin B6-rich foods (bananas, chickpeas, avocados, walnuts) - Vitamin B6 is proven to reduce nausea signals in the brain (doctors even prescribe it in supplement form)."
+      ],
+      "donts": [
+        "Fried snacks (samosa, pakora, bhature, puri) - Heavy on oil, slow digestion, and trigger acidity.",
+        "Spicy & oily curries (rich masala gravies like butter chicken/paneer butter masala) - Strong aroma + heaviness = nausea.",
+        "Strong-smelling foods (tadka with onion/garlic, fish curry, egg dishes) - Pregnancy nose is extra sensitive.",
+        "Street food (golgappe, chaat, tikki) - Often oily, spicy, and unhygienic; can worsen nausea and acidity.",
+        "Sweets & mithai (jalebi, gulab jamun, laddoo) - High sugar can cause blood sugar spikes and worsen queasiness.",
+        "Caffeinated drinks (strong tea, coffee, cola) - Can irritate the stomach lining and dehydrate you.",
+        "Carbonated & packaged drinks (sodas, energy drinks) - Gas and bloating add to nausea.",
+        "Very strong-flavoured pickles/achaar - Too much spice and oil may irritate the stomach.",
+        "Overly greasy parathas with ghee/oil - Hard to digest first thing in the morning.",
+        "Large meals at once (thalis or buffets) - A full stomach makes nausea worse."
+      ]
+    },
+    {
+      "id": "habits",
+      "title": "Habits",
+      "description": "Lifestyle tips to reduce nausea",
+      "dos": [
+        "Eat something dry before getting out of bed - Biscuits before brushing? Totally pregnancy-approved.",
+        "Prefer cold foods - Fruits, smoothies, curd rice… because hot food smells are basically villains in disguise.",
+        "Keep ginger, lemon, and mint handy - Add them to tea, chutney, or just nibble plain slices. (Your stomach's personal bouncers!)",
+        "Avoid long gaps between meals - Small frequent meals prevent nausea because an empty tummy is basically an invitation card for it."
+      ],
+      "donts": [
+        "Skipping meals or long gaps between eating - An empty stomach = more acid, more nausea.",
+        "Rushing out of bed too quickly - Sudden movement on an empty tummy often worsens morning sickness.",
+        "Strong food smells (tadka, frying, onions, garlic) - Overactive pregnancy hormones make your nose too good at detecting smells.",
+        "Oily, spicy, or fried food - Heavy foods take longer to digest and can trigger both nausea and acidity.",
+        "Overeating in one go - A stuffed stomach presses on your already sensitive digestive system.",
+        "Drinking lots of water with meals - Dilutes stomach acids, slows digestion, and adds to that 'sloshy' nausea feeling.",
+        "Heat and stuffy rooms - Warm, poorly ventilated places can intensify nausea and dizziness.",
+        "Brushing teeth immediately after waking - Toothpaste foam + gag reflex = nausea central.",
+        "Stress and fatigue - Tiredness lowers your nausea threshold — rest actually helps calm symptoms.",
+        "Scrolling/cooking/working while nauseous - Multitasking through nausea can make you more aware of the queasiness."
+      ]
+    }
+  ]
+}

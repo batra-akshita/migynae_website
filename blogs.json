@@ -1,5 +1,25 @@
 [
   {
+    "id": "nausea-friendly-diet",
+    "title": "Nausea-Friendly Diet Guide for Pregnancy",
+    "excerpt": "Morning sickness hits anytime, not just mornings. Discover smart eating hacks to manage nausea with meal options, sample diet charts, and essential do's and don'ts.",
+    "content": "A comprehensive guide to managing nausea through diet during pregnancy.",
+    "image": "images/blog/nausea_friendly_diet.webp",
+    "categories": ["nutrition", "first-trimester"],
+    "date": "2026-01-26",
+    "readTime": "12 min read"
+  },
+  {
+    "id": "pregnancy-exercises",
+    "title": "Safe Exercises for 9th Month Pregnancy",
+    "excerpt": "Discover 7 safe and effective exercises for your 9th month of pregnancy. Stay active, prepare for labor, and keep your body strong with walking, pelvic tilts, squats, and more.",
+    "content": "Safe exercises to prepare your body for labor and delivery in the 9th month of pregnancy.",
+    "image": "images/blog/safe_9th_month_exercises.webp",
+    "categories": ["exercise", "third-trimester"],
+    "date": "2026-01-26",
+    "readTime": "10 min read"
+  },
+  {
     "id": "pregnancy-101",
     "title": "Pregnancy 101: What Every First-Time Mom Should Know",
     "excerpt": "Congratulations on your pregnancy! One of the first doubts most women have is — \"Can I continue doing my routine activities?\" Here's a clear guide on what you can safely do, what needs precautions, and when to stop.",

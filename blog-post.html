@@ -109,7 +109,7 @@
         /* Banner */
         .banner-image {
             width: 100%;
-            height: 450px;
+            height: 550px;
             object-fit: cover;
             object-position: center center;
             margin-top: 76px;
@@ -451,6 +451,165 @@
             line-height: 1.6;
         }
 
+        /* Exercise Tiles - Horizontal Scroll */
+        .exercise-tiles-container {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            padding: 10px 0 20px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .exercise-tiles-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .exercise-tiles-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .exercise-tiles-container::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        .exercise-tile {
+            min-width: 150px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 16px 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .exercise-tile:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-color);
+        }
+
+        .exercise-tile-icon {
+            width: 55px;
+            height: 55px;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .exercise-tile-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .exercise-tile-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        /* Caution Box */
+        .caution-box {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .caution-box p {
+            color: #991b1b;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Flip Card */
+        /* Routine Section */
+        .routine-section {
+            margin: 40px 0;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            padding: 32px;
+        }
+
+        .routine-section .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .routine-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .routine-time-block {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .routine-time-block h4 {
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+            font-size: 16px;
+        }
+
+        .routine-time-block p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        /* Cultural Tips Section */
+        .cultural-tips-section {
+            margin: 40px 0;
+            background: linear-gradient(135deg, #fff8f0 0%, #ffe9e0 100%);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            padding: 32px;
+        }
+
+        .cultural-tips-section .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .cultural-tips-content {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .cultural-tips-content p {
+            margin-bottom: 16px;
+        }
+
+        .cultural-tips-content h4 {
+            font-weight: 700;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+
         /* Pregnancy 101 Topics Grid */
         .topics-grid {
             display: grid;
@@ -783,7 +942,7 @@
             }
 
             .banner-image {
-                height: 250px;
+                height: 320px;
             }
 
             .tiles-container {
@@ -792,6 +951,18 @@
 
             .food-tile {
                 min-width: 140px;
+            }
+
+            .exercise-tiles-container {
+                gap: 12px;
+            }
+
+            .exercise-tile {
+                min-width: 130px;
+            }
+
+            .routine-content {
+                grid-template-columns: 1fr;
             }
 
             .topics-grid {
@@ -907,10 +1078,18 @@
                     const dietResponse = await fetch('first_trimester_diet.json');
                     const dietData = await dietResponse.json();
                     renderDietGuide(blog, dietData);
+                } else if (blog.id === 'nausea-friendly-diet') {
+                    const nauseaResponse = await fetch('nausea_friendly_diet.json');
+                    const nauseaData = await nauseaResponse.json();
+                    renderNauseaFriendlyDiet(blog, nauseaData);
                 } else if (blog.id === 'pregnancy-101') {
                     const pregnancy101Response = await fetch('pregnancy_101.json');
                     const pregnancy101Data = await pregnancy101Response.json();
                     renderPregnancy101(blog, pregnancy101Data);
+                } else if (blog.id === 'pregnancy-exercises') {
+                    const exercisesResponse = await fetch('pregnancy_exercises.json');
+                    const exercisesData = await exercisesResponse.json();
+                    renderPregnancyExercises(blog, exercisesData);
                 } else {
                     renderRegularBlog(blog);
                 }
@@ -1202,6 +1381,229 @@
             updateCarousel();
         }
 
+        function renderNauseaFriendlyDiet(blog, nauseaData) {
+            const mainContent = document.getElementById('mainContent');
+            const sections = nauseaData.sections || [];
+            const sampleDietCharts = nauseaData.sample_diet_charts || [];
+            const dosDonts = nauseaData.dos_donts || [];
+            totalDietCharts = sampleDietCharts.length;
+
+            mainContent.innerHTML = `
+                <img src="${blog.image}" alt="${blog.title}" class="banner-image">
+
+                <div class="content-wrapper">
+                    <div class="container">
+                        <!-- Header -->
+                        <h1>${blog.title}</h1>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> ${blog.date}</span>
+                            <span><i class="fas fa-clock"></i> ${blog.readTime}</span>
+                            ${blog.categories.map(cat => `<span class="category-tag">${cat}</span>`).join('')}
+                        </div>
+
+                        <!-- Intro -->
+                        <div class="intro-text">
+                            ${nauseaData.intro.description.split('\n\n').map(p => `<p>${p}</p>`).join('')}
+                        </div>
+
+                        <!-- Meal Options -->
+                        <div class="section-header">
+                            <i class="fas fa-utensils"></i>
+                            <h2>Meal Options</h2>
+                        </div>
+
+                        <div class="tiles-container">
+                            ${sections.map(section => `
+                                <div class="food-tile" onclick="showMealDetails(${sections.indexOf(section)})">
+                                    <img src="${getMealIconPath(section.id)}" alt="${section.title}" class="tile-icon">
+                                    <h3>${getMealTileTitle(section.id)}</h3>
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <!-- Sample Diet Charts -->
+                        <div class="diet-charts-section">
+                            <div class="section-header">
+                                <i class="fas fa-calendar" style="color: #f59e0b;"></i>
+                                <h2>Sample Diet Charts</h2>
+                            </div>
+                            <div class="diet-carousel">
+                                <div class="diet-carousel-track" id="carouselTrack">
+                                    ${sampleDietCharts.map((chart, index) => `
+                                        <div class="diet-chart-card">
+                                            <div class="diet-chart-header">
+                                                <div>
+                                                    <h3 class="diet-chart-title">${chart.title}</h3>
+                                                    <p class="diet-chart-desc">${chart.description}</p>
+                                                </div>
+                                                <span class="chart-counter">${index + 1}/${sampleDietCharts.length}</span>
+                                            </div>
+                                            ${chart.schedule.map(meal => `
+                                                <div class="meal-item">
+                                                    <div class="meal-time">${meal.time}</div>
+                                                    <div class="meal-details">
+                                                        <div class="meal-name">${meal.meal}</div>
+                                                        <div class="meal-items">${meal.items.join(', ')}</div>
+                                                    </div>
+                                                </div>
+                                            `).join('')}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-btn" onclick="previousChart()">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="carousel-btn" onclick="nextChart()">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="carousel-dots">
+                                ${sampleDietCharts.map((_, index) =>
+                                    `<span class="dot ${index === 0 ? 'active' : ''}" onclick="goToChart(${index})"></span>`
+                                ).join('')}
+                            </div>
+                        </div>
+
+                        <!-- Do's and Don'ts -->
+                        <div class="section-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <h2>Do's and Don'ts</h2>
+                        </div>
+
+                        <div class="tiles-container">
+                            ${dosDonts.map(category => `
+                                <div class="food-tile" onclick="showDosDontsDetails(${dosDonts.indexOf(category)})">
+                                    <img src="${getDosDontsSvg(category.id)}" alt="${category.title}" class="tile-icon">
+                                    <h3>${category.title}</h3>
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <!-- App CTA -->
+                        <div class="app-cta-section">
+                            <div class="app-cta-content">
+                                <h2>Get Personalized Diet Plans</h2>
+                                <p>Download the MiGynae app for nausea-friendly meal plans, nutrition tracking, and expert guidance throughout your pregnancy journey.</p>
+                                <div class="app-download-buttons">
+                                    <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="btn-android" target="_blank">
+                                        <img src="/images/Playstore_button.png" alt="Get it on Google Play">
+                                    </a>
+                                    <a href="https://apps.apple.com/in/app/migynae/id6748379521" class="btn-ios" target="_blank">
+                                        <img src="/images/apple_logo_button_white.svg" alt="Download on the App Store">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Store data globally for modal access
+            window.nauseaSections = sections;
+            window.nauseaCharts = sampleDietCharts;
+            window.nauseaDosDonts = dosDonts;
+
+            // Initialize carousel
+            updateCarousel();
+        }
+
+        function getMealTileTitle(sectionId) {
+            const titles = {
+                'early_morning': 'Early\nMorning',
+                'breakfast': 'Breakfast',
+                'mid_morning': 'Mid\nMorning',
+                'lunch': 'Lunch',
+                'evening_snack': 'Evening\nSnack',
+                'dinner': 'Dinner',
+                'bedtime_snack': 'Bedtime\nSnack'
+            };
+            return titles[sectionId] || 'Meal';
+        }
+
+        function getMealIconPath(sectionId) {
+            const icons = {
+                'early_morning': 'images/icons/early_morning.svg',
+                'breakfast': 'images/icons/breakfast.svg',
+                'mid_morning': 'images/icons/mid_Day.svg',
+                'lunch': 'images/icons/veg_meal.svg',
+                'evening_snack': 'images/icons/mid_evening.svg',
+                'dinner': 'images/icons/non_veg_meal.svg',
+                'bedtime_snack': 'images/icons/night_snack.svg'
+            };
+            return icons[sectionId] || 'images/icons/breakfast.svg';
+        }
+
+        function getDosDontsSvg(categoryId) {
+            const icons = {
+                'foods': 'images/icons/dos_food.svg',
+                'habits': 'images/icons/habits.svg'
+            };
+            return icons[categoryId] || 'images/icons/dos_food.svg';
+        }
+
+        function showMealDetails(index) {
+            const section = window.nauseaSections[index];
+            const modal = document.getElementById('foodModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+
+            modalTitle.textContent = section.title;
+            modalBody.innerHTML = `
+                <p style="font-size: 14px; color: #6b7280; margin-bottom: 20px;">${section.description}</p>
+
+                ${section.pro_tip ? `
+                    <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 16px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #f59e0b;">
+                        <p style="font-weight: 600; color: #92400e; margin-bottom: 8px;"><i class="fas fa-lightbulb" style="margin-right: 8px;"></i>Pro Tip:</p>
+                        <p style="font-size: 14px; color: #78350f; margin: 0;">${section.pro_tip}</p>
+                    </div>
+                ` : ''}
+
+                <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 16px; color: var(--primary-color);">Options:</h3>
+                ${section.items.map(item => `
+                    <div style="margin-bottom: 16px; padding: 12px; background: #f9fafb; border-radius: 8px; border-left: 3px solid var(--primary-color);">
+                        <p style="font-weight: 600; font-size: 14px; margin-bottom: 4px; color: #1f2937;">${item.name}</p>
+                        <p style="font-size: 13px; color: #6b7280; margin: 0;">${item.description}</p>
+                    </div>
+                `).join('')}
+            `;
+
+            modal.classList.add('active');
+        }
+
+        function showDosDontsDetails(index) {
+            const category = window.nauseaDosDonts[index];
+            const modal = document.getElementById('foodModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+
+            modalTitle.textContent = category.title;
+            modalBody.innerHTML = `
+                <p style="font-size: 14px; color: #6b7280; margin-bottom: 24px;">${category.description}</p>
+
+                <div style="margin-bottom: 24px;">
+                    <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px; color: #16a34a;"><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Do's:</h3>
+                    ${category.dos.map(item => `
+                        <div style="margin-bottom: 12px; padding: 12px; background: #f0fdf4; border-radius: 8px; border-left: 3px solid #16a34a;">
+                            <p style="font-size: 14px; color: #166534; margin: 0;">${item}</p>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <div>
+                    <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px; color: #dc2626;"><i class="fas fa-times-circle" style="margin-right: 8px;"></i>Don'ts:</h3>
+                    ${category.donts.map(item => `
+                        <div style="margin-bottom: 12px; padding: 12px; background: #fef2f2; border-radius: 8px; border-left: 3px solid #dc2626;">
+                            <p style="font-size: 14px; color: #991b1b; margin: 0;">${item}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+
+            modal.classList.add('active');
+        }
+
         function renderPregnancy101(blog, pregnancy101Data) {
             const mainContent = document.getElementById('mainContent');
             const topics = pregnancy101Data.topics || [];
@@ -1352,6 +1754,240 @@
             modalBody.innerHTML = detailsHTML;
             modal.classList.add('active');
         }
+
+        function renderPregnancyExercises(blog, exercisesData) {
+            const mainContent = document.getElementById('mainContent');
+
+            mainContent.innerHTML = `
+                <img src="${blog.image}" alt="${blog.title}" class="banner-image">
+
+                <div class="content-wrapper">
+                    <div class="container">
+                        <a href="blog.html" class="back-link">
+                            <i class="fas fa-arrow-left"></i> Back to Blog
+                        </a>
+
+                        <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; color: var(--text-dark);">${blog.title}</h1>
+
+                        <!-- Exercise Tiles -->
+                        <div class="exercise-tiles-container">
+                            ${exercisesData.map((exercise, index) => `
+                                <div class="exercise-tile" onclick="showExerciseDetails(${JSON.stringify(exercise).replace(/"/g, '&quot;')})">
+                                    <div class="exercise-tile-icon">
+                                        <img src="${getExerciseSvgIcon(exercise.title)}" alt="${exercise.title}">
+                                    </div>
+                                    <div class="exercise-tile-title">${exercise.title}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <!-- Caution Box -->
+                        <div class="caution-box">
+                            <p><i class="fas fa-exclamation-triangle"></i> Caution: Exercise should be avoided if your doctor has advised strict rest. Always consult before starting.</p>
+                        </div>
+
+                        <!-- Sample Routine Section -->
+                        <div class="routine-section">
+                            <h3 class="section-title">Sample Movement Routine</h3>
+                            <div class="routine-content">
+                                <div class="routine-time-block">
+                                    <h4>Morning:</h4>
+                                    <p>• Walk 15 mins<br>• Butterfly pose 2 mins<br>• Malasana 3–4 mins</p>
+                                </div>
+
+                                <div class="routine-time-block">
+                                    <h4>Afternoon:</h4>
+                                    <p>• Pelvic tilts (10 reps)<br>• Deep breathing (5 mins)<br>• Pregnancy ball (5 mins)</p>
+                                </div>
+
+                                <div class="routine-time-block">
+                                    <h4>Evening:</h4>
+                                    <p>• Walk 10–15 mins<br>• 5 gentle squats<br>• Feet elevation 10 mins</p>
+                                </div>
+
+                                <div class="routine-time-block">
+                                    <h4>Night:</h4>
+                                    <p>• Walk 20–30 mins<br>• Butterfly pose 2–3 mins</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cultural Tips Section -->
+                        <div class="cultural-tips-section">
+                            <h3 class="section-title">🌿 Cultural Tips for Indian Moms</h3>
+                            <div class="cultural-tips-content">
+                                <p>👣 Walk barefoot at home only if the floor is non-slippery (use anti-slip socks or chappals).</p>
+
+                                <p>👵 Respect elders' concerns, but educate them gently. Share how doctors now encourage gentle movement even in the 9th month.</p>
+
+                                <p>Use Indian-style sitting with cushions (for butterfly pose or squats) only if comfortable and with support.</p>
+
+                                <p>🍲 After your walk or workout, hydrate with jeera water or coconut water — great for digestion and swelling.</p>
+
+                                <h4>💬 Final Word:</h4>
+                                <p>Your body is ready. Your baby is almost here. Keep your spirits high and your body gently active. Think of movement as your way to prepare for one of the most powerful days of your life.</p>
+
+                                <p>Labour is not just about strength — it's about preparation. So, move a little, breathe a lot, and trust your body.</p>
+
+                                <h4>💡 Listen to your body:</h4>
+                                <p>Every mom-to-be is different. These exercises are general recommendations, not one-size-fits-all. Always check with your gynecologist before starting or modifying your movement routine, especially if you're high-risk.</p>
+
+                                <p>Listen to your body. Never exercise to the point of exhaustion. If you feel cramps, breathlessness, or dizziness — stop immediately.</p>
+                            </div>
+                        </div>
+
+                        <!-- App CTA -->
+                        <div class="app-cta-section">
+                            <div class="app-cta-content">
+                                <h2>Get Personalized Exercise Plans</h2>
+                                <p>Download the MiGynae app for trimester-specific exercise routines, video guides, and expert advice throughout your pregnancy journey.</p>
+                                <div class="app-download-buttons">
+                                    <a href="https://play.google.com/store/apps/details?id=com.mimedic.migynae" class="btn-android" target="_blank">
+                                        <img src="/images/Playstore_button.png" alt="Get it on Google Play">
+                                    </a>
+                                    <a href="https://apps.apple.com/in/app/migynae/id6748379521" class="btn-ios" target="_blank">
+                                        <img src="/images/apple_logo_button_white.svg" alt="Download on the App Store">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function getExerciseSvgIcon(title) {
+            const titleLower = title.toLowerCase();
+            if (titleLower.includes('walking')) return 'images/icons/walk.svg';
+            if (titleLower.includes('pelvic') || titleLower.includes('cat')) return 'images/icons/cat.svg';
+            if (titleLower.includes('squats') && !titleLower.includes('malasana')) return 'images/icons/squats.svg';
+            if (titleLower.includes('butterfly')) return 'images/icons/butterfly.svg';
+            if (titleLower.includes('breathing')) return 'images/icons/breathing.svg';
+            if (titleLower.includes('ball')) return 'images/icons/ball.svg';
+            if (titleLower.includes('malasana') || titleLower.includes('garland')) return 'images/icons/garland.svg';
+            return 'images/icons/exercise.svg';
+        }
+
+        function showExerciseDetails(exercise) {
+            const modal = document.getElementById('foodModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+
+            modalTitle.textContent = exercise.title;
+
+            let detailsHTML = '';
+
+            // How to Do
+            if (exercise.howToDo) {
+                const steps = exercise.howToDo.split(';;');
+                detailsHTML += `
+                    <div class="topic-detail-section">
+                        <h4><i class="fas fa-check-circle" style="color: #10b981;"></i> How to Do</h4>
+                        <ul style="list-style: none; padding-left: 0;">
+                            ${steps.map(step => `<li>• ${step.trim()}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            // Variations (for ball exercises)
+            if (exercise.variations) {
+                exercise.variations.forEach(variation => {
+                    const varSteps = variation.howToDo ? variation.howToDo.split(';;') : [];
+                    detailsHTML += `
+                        <div class="topic-detail-section">
+                            <h4><i class="fas fa-sync-alt" style="color: #3b82f6;"></i> ${variation.name}</h4>
+                            <ul style="list-style: none; padding-left: 0;">
+                                ${varSteps.map(step => `<li>• ${step.trim()}</li>`).join('')}
+                            </ul>
+                            ${variation.repsPerDay ? `<p><strong>Reps:</strong> ${variation.repsPerDay}</p>` : ''}
+                            ${variation.duration ? `<p><strong>Duration:</strong> ${variation.duration}</p>` : ''}
+                            ${variation.whenToDo ? `<p><strong>When:</strong> ${variation.whenToDo}</p>` : ''}
+                        </div>
+                    `;
+                });
+            }
+
+            // Reps Per Day
+            if (exercise.repsPerDay) {
+                detailsHTML += `
+                    <div class="topic-detail-section">
+                        <h4><i class="fas fa-redo" style="color: #8b5cf6;"></i> Reps Per Day</h4>
+                        <p>${exercise.repsPerDay}</p>
+                    </div>
+                `;
+            }
+
+            // Duration
+            if (exercise.duration) {
+                detailsHTML += `
+                    <div class="topic-detail-section">
+                        <h4><i class="fas fa-clock" style="color: #f59e0b;"></i> Duration</h4>
+                        <p>${exercise.duration}</p>
+                    </div>
+                `;
+            }
+
+            // When to Do
+            if (exercise.whenToDo) {
+                detailsHTML += `
+                    <div class="topic-detail-section">
+                        <h4><i class="fas fa-calendar-check" style="color: #14b8a6;"></i> When to Do</h4>
+                        <p>${exercise.whenToDo}</p>
+                    </div>
+                `;
+            }
+
+            // How to Increase
+            if (exercise.howToIncrease) {
+                detailsHTML += `
+                    <div class="topic-detail-section">
+                        <h4><i class="fas fa-arrow-up" style="color: #06b6d4;"></i> How to Increase</h4>
+                        <p>${exercise.howToIncrease}</p>
+                    </div>
+                `;
+            }
+
+            // When to Stop
+            if (exercise.whenToStop) {
+                detailsHTML += `
+                    <div class="topic-detail-section">
+                        <span class="danger-badge">
+                            <i class="fas fa-stop-circle"></i> When to Stop
+                        </span>
+                        <p style="margin-top: 8px;">${exercise.whenToStop}</p>
+                    </div>
+                `;
+            }
+
+            // Avoid If
+            if (exercise.avoidIf) {
+                detailsHTML += `
+                    <div class="topic-detail-section">
+                        <span class="warning-badge">
+                            <i class="fas fa-exclamation-triangle"></i> Avoid If
+                        </span>
+                        <p style="margin-top: 8px;">${exercise.avoidIf}</p>
+                    </div>
+                `;
+            }
+
+            // Pro Tip
+            if (exercise.proTip) {
+                detailsHTML += `
+                    <div class="topic-detail-section">
+                        <span class="safe-badge">
+                            <i class="fas fa-lightbulb"></i> Pro Tip
+                        </span>
+                        <p style="margin-top: 8px;">${exercise.proTip}</p>
+                    </div>
+                `;
+            }
+
+            modalBody.innerHTML = detailsHTML;
+            modal.classList.add('active');
+        }
+
 
         function renderRegularBlog(blog) {
             // Fallback for other blogs

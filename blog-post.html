@@ -141,6 +141,62 @@
             color: var(--primary-color);
         }
 
+        /* Blog Title */
+        .content-wrapper h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        /* Blog Meta */
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f3f4f6;
+        }
+
+        .blog-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .blog-meta i {
+            color: var(--primary-color);
+            font-size: 16px;
+        }
+
+        .category-tag {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        /* Intro Text */
+        .intro-text {
+            margin-bottom: 40px;
+        }
+
+        .intro-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
         .intro-section {
             margin-bottom: 40px;
         }
@@ -1004,6 +1060,23 @@
                 height: 320px;
             }
 
+            .content-wrapper h1 {
+                font-size: 1.875rem;
+                margin-top: 20px;
+                margin-bottom: 16px;
+            }
+
+            .blog-meta {
+                gap: 12px;
+                font-size: 13px;
+                margin-bottom: 24px;
+            }
+
+            .category-tag {
+                font-size: 12px;
+                padding: 5px 12px;
+            }
+
             .tiles-container {
                 gap: 12px;
             }
@@ -1179,9 +1252,15 @@
                             <i class="fas fa-arrow-left"></i> Back to Blog
                         </a>
 
-                        <div class="intro-section">
-                            <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; color: var(--text-dark);">${blog.title}</h1>
-                            <p>${dietData.intro.description}</p>
+                        <h1>${blog.title}</h1>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> ${blog.date}</span>
+                            <span><i class="fas fa-clock"></i> ${blog.readTime}</span>
+                            ${blog.categories.map(cat => `<span class="category-tag">${cat}</span>`).join('')}
+                        </div>
+
+                        <div class="intro-text">
+                            ${dietData.intro.description.split('\n\n').map(p => `<p>${p}</p>`).join('')}
                         </div>
 
                         <!-- Food Options Tiles -->
@@ -1456,7 +1535,10 @@
 
                 <div class="content-wrapper">
                     <div class="container">
-                        <!-- Header -->
+                        <a href="blog.html" class="back-link">
+                            <i class="fas fa-arrow-left"></i> Back to Blog
+                        </a>
+
                         <h1>${blog.title}</h1>
                         <div class="blog-meta">
                             <span><i class="fas fa-calendar-alt"></i> ${blog.date}</span>
@@ -1464,7 +1546,6 @@
                             ${blog.categories.map(cat => `<span class="category-tag">${cat}</span>`).join('')}
                         </div>
 
-                        <!-- Intro -->
                         <div class="intro-text">
                             ${nauseaData.intro.description.split('\n\n').map(p => `<p>${p}</p>`).join('')}
                         </div>
@@ -1682,7 +1763,10 @@ Here are 10 superfoods and nutrition tips every 9th-month mom (and her mom!) sho
 
                 <div class="content-wrapper">
                     <div class="container">
-                        <!-- Header -->
+                        <a href="blog.html" class="back-link">
+                            <i class="fas fa-arrow-left"></i> Back to Blog
+                        </a>
+
                         <h1>${blog.title}</h1>
                         <div class="blog-meta">
                             <span><i class="fas fa-calendar-alt"></i> ${blog.date}</span>
@@ -1690,7 +1774,6 @@ Here are 10 superfoods and nutrition tips every 9th-month mom (and her mom!) sho
                             ${blog.categories.map(cat => `<span class="category-tag">${cat}</span>`).join('')}
                         </div>
 
-                        <!-- Intro -->
                         <div class="intro-text">
                             ${introText.split('\n\n').map(p => `<p>${p}</p>`).join('')}
                         </div>
@@ -1853,9 +1936,15 @@ Here are 10 superfoods and nutrition tips every 9th-month mom (and her mom!) sho
                             <i class="fas fa-arrow-left"></i> Back to Blog
                         </a>
 
-                        <div class="intro-section">
-                            <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; color: var(--text-dark);">${blog.title}</h1>
-                            <p>${pregnancy101Data.intro.description}</p>
+                        <h1>${blog.title}</h1>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> ${blog.date}</span>
+                            <span><i class="fas fa-clock"></i> ${blog.readTime}</span>
+                            ${blog.categories.map(cat => `<span class="category-tag">${cat}</span>`).join('')}
+                        </div>
+
+                        <div class="intro-text">
+                            ${pregnancy101Data.intro.description.split('\n\n').map(p => `<p>${p}</p>`).join('')}
                         </div>
 
                         <!-- Topics Section -->
@@ -2003,7 +2092,12 @@ Here are 10 superfoods and nutrition tips every 9th-month mom (and her mom!) sho
                             <i class="fas fa-arrow-left"></i> Back to Blog
                         </a>
 
-                        <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; color: var(--text-dark);">${blog.title}</h1>
+                        <h1>${blog.title}</h1>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> ${blog.date}</span>
+                            <span><i class="fas fa-clock"></i> ${blog.readTime}</span>
+                            ${blog.categories.map(cat => `<span class="category-tag">${cat}</span>`).join('')}
+                        </div>
 
                         <!-- Exercise Tiles -->
                         <div class="exercise-tiles-container">
